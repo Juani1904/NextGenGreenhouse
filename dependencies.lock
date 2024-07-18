@@ -1,0 +1,15 @@
+dependencies:
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.2.2
+  zorxx/dht:
+    component_hash: 6a5e699b15509d99b90352694e23beb6646855486eb3bafefd1d50058d474e98
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 1.0.1
+manifest_hash: aa8872020690ece4292ca3206d8edd4d69b9d9e38cbdce168e96395af6912ea0
+target: esp32
+version: 1.0.0

@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/CMakeFiles/bootloader
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/CMakeFiles/bootloader.rule
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/CMakeFiles/bootloader-complete.rule
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
