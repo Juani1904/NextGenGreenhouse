@@ -663,3 +663,10 @@ C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install/local.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install/strip.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/edit_cache.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/rebuild_cache.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/list_install_components.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/install.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/install/local.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/install/strip.dir
