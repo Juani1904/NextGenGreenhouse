@@ -7,15 +7,12 @@
 #include "owb_rmt.h"
 #include "ds18b20.h"
 
-#define VALOR_INTERVALO 5 //+-5 grados de la temperatura ideal. Fija los limites de la temperatura
-
 /**
  * @brief Parametros de control de temperatura
  */
 typedef struct{
     float temperatura;
     uint8_t temperatura_ideal;
-    uint8_t valor_intervalo;
     uint8_t limite_inf_temp;
     uint8_t limite_sup_temp;
     uint8_t ventilador;

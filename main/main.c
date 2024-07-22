@@ -24,8 +24,6 @@ static const char *MAIN_TAG = "Main";
 #define PERIODO_MUESTREO (1000)
 //Pin de conexion de One Wire del sensor DS18B20
 #define GPIO_DS18B20_0 (GPIO_NUM_13) 
-//Declaramos variable parámetros temperatura
-param_cont_temperatura parametros_temperatura;
 
 /*--------------------------------CONTROL HUMEDAD-----------------------------------------------*/
 
@@ -42,15 +40,17 @@ void app_main(void)
     conecta_servidor();
     //Enviamos a Blynk la solicitud para que sincronice los datos con las variables del sistema
     envia_Blynk("sync",NULL);
-
     //Creamos las tareas del sistema
     crea_tareas();
     
 }
 
 void vTaskMideTemperatura(void *pvParameters){
-    //Enviamos al script de Blynk la direccion de memoria de la estructura de parametros de temperatura
-    apunta_parametros_temperatura(&parametros_temperatura);
+    //Reservamos un espacio de memoria e incializamos el puntero parametros_temperatura, que apunta al primer elemento de ese espacio
+    param_cont_temperatura *parametros_temperatura=(param_cont_temperatura *)malloc(sizeof(param_cont_temperatura));
+    //Enviamos al script de Blynk el puntero a la estructura de parametros de temperatura
+    apunta_parametros_temperatura(parametros_temperatura);
+   
     //Seteamos la resistencia de pull up interna.
     gpio_set_pull_mode(GPIO_DS18B20_0, GPIO_PULLUP_ONLY);
     //Aplicamos un delay de 2 segundos para que el sensor se estabilice
@@ -61,15 +61,16 @@ void vTaskMideTemperatura(void *pvParameters){
     inicia_sensor_temperatura();
     while(1){
     //Medimos la temperatura
-    mide_temperatura(&parametros_temperatura);
+    mide_temperatura(parametros_temperatura);
     //Lo enviamos a Blynk
     char temperaturaC[10];
-    sprintf(temperaturaC,"%.1f",parametros_temperatura.temperatura);
+    sprintf(temperaturaC,"%.1f",parametros_temperatura->temperatura);
     envia_Blynk("temp",temperaturaC);
-    printf("Temperatura invernadero: %.1f\n", parametros_temperatura.temperatura);
-    printf("La temperatura ideal es: %d\n",parametros_temperatura.temperatura_ideal);
-    //Printeo temp ideal
-    //printf("Temperatura ideal: %d\n", parametros_temperatura.temperatura_ideal);
+    printf("Temperatura invernadero: %.1f\n", parametros_temperatura->temperatura);
+    printf("Temperatura ideal: %d\n", parametros_temperatura->temperatura_ideal);
+    printf("Intervalo superior: %d\n", parametros_temperatura->limite_sup_temp);
+    printf("Intervalo inferior: %d\n", parametros_temperatura->limite_inf_temp);
+   //Revisamos 
     vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO));
     }
     

@@ -283,6 +283,8 @@ void recibe_Blynk(esp_mqtt_event_handle_t event)
     if (strncmp(event->topic,"downlink/ds/temp_ideal", event->topic_len) == 0)
     {
         parametros_temperatura_Blynk->temperatura_ideal = atoi(event->data);
+        parametros_temperatura_Blynk->limite_sup_temp = parametros_temperatura_Blynk->temperatura_ideal + 5;
+        parametros_temperatura_Blynk->limite_inf_temp = parametros_temperatura_Blynk->temperatura_ideal - 5;
     }
 }
 
