@@ -1,3 +1,5 @@
+#ifndef CONTROL_TEMPERATURA_H
+#define CONTROL_TEMPERATURA_H
 //-------------------------------------Control temperatura-------------------------------------
 //Componente donde se almacenan las funciones de sensado de temperatura, acción de ventiladores y de bloque climatizador
 #include <stdint.h>
@@ -48,3 +50,5 @@ void enciende_climatizador(bool calor);
  * @param diferencia_temp Diferencia absoluta entre la temperatura ideal y la temperatura actual
  */
 void controla_ventilador(float diferencia_temp);
+
+#endif

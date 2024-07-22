@@ -36,7 +36,8 @@
         "owb.h": "c",
         "netdb.h": "c",
         "gpio.h": "c",
-        "control_temperatura.h": "c"
+        "control_temperatura.h": "c",
+        "blynk_mqtt_connect.h": "c"
     },
     "idf.flashType": "UART",
     "idf.portWin": "COM3"

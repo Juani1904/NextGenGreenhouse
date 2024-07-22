@@ -3,11 +3,11 @@
 34494	36678	7432887487705078	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/i2c_periph.c.obj	a162dd4e529874d7
 105677	107683	7432888201552278	esp-idf/driver/CMakeFiles/__idf_driver.dir/i2c/i2c_common.c.obj	843209b430e6b669
 72	163	7432887137658018	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/project_elf_src_esp32.c	8957116237c8b6fc
-108	296	7432887139219218	esp-idf/esp_system/ld/memory.ld	90e497df873890b6
 41555	43587	7432887560069970	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/sar_periph_ctrl.c.obj	c82ca5121c1806c1
+108	296	7432887139219218	esp-idf/esp_system/ld/memory.ld	90e497df873890b6
 31671	33671	7432887459724224	esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/touch_sensor_hal.c.obj	f8e21562303f0729
-325	1632	7432887143397300	esp-idf/mbedtls/mbedtls/3rdparty/everest/CMakeFiles/everest.dir/library/x25519.c.obj	6891040952617d45
 62284	64929	7432887766814871	esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/lwip/netif/esp_pbuf_ref.c.obj	fd91c09d77f3c987
+325	1632	7432887143397300	esp-idf/mbedtls/mbedtls/3rdparty/everest/CMakeFiles/everest.dir/library/x25519.c.obj	6891040952617d45
 55453	57655	7432887700181847	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/ipv6/ip6.c.obj	bee41ae31ff9b21b
 133	304	7432887139305722	esp-idf/esp_system/ld/sections.ld.in	3c1ebc6757fa6b3e
 62399	65086	7432887769184021	esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/port/os_xtensa.c.obj	a97f9749da9f122e
@@ -62,8 +62,8 @@
 48563	51583	7432887639674029	esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_encrypted_partition.cpp.obj	960abd358ac684a4
 1304	3031	7432887153944285	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/bignum_mod.c.obj	563b3b14211140a8
 1467	3276	7432887156290402	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/block_cipher.c.obj	94e4708b40b2ef15
-53153	55320	7432887678452327	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj	47b69ab9c2020a60
 110251	112334	7432888246989546	esp-idf/driver/CMakeFiles/__idf_driver.dir/twai/twai.c.obj	ca00ff9fe6d0b77f
+53153	55320	7432887678452327	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/core/tcp.c.obj	47b69ab9c2020a60
 119856	122310	7432888344475071	esp-idf/esp_mm/libesp_mm.a	c290eb1d09d5d635
 5755	7681	7432887201162595	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/pkwrite.c.obj	d8113687c770f6d3
 13301	15380	7432887278307715	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls12_server.c.obj	f8022a2f86ec7531
@@ -101,7 +101,7 @@
 2831	4719	7432887172076091	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/ecdsa.c.obj	c82649c0fa2d498a
 103341	105528	7432888180245563	esp-idf/driver/CMakeFiles/__idf_driver.dir/gpio/gpio.c.obj	32725c105cc8863a
 4281	6305	7432887186946932	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/md.c.obj	54b2919efb912d60
-14306	16675	7432887286120875	esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj	eacf1f11968cf520
+143	491	7432934777483504	esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj	d7700c4a9dd94d80
 4719	6774	7432887192154231	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/oid.c.obj	63a1a3f10fb4e6ae
 33902	35930	7432887481769655	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/ledc_periph.c.obj	9a8e38b7fe91cb62
 107221	109253	7432888217313640	esp-idf/driver/CMakeFiles/__idf_driver.dir/mcpwm/mcpwm_oper.c.obj	49254d2a63f36d72
@@ -242,6 +242,7 @@
 19079	21395	7432887331736730	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-download	b468419e34596f1a
 12035	14058	7432887263366129	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/mps_reader.c.obj	5e9a97bec55633c7
 12122	14190	7432887263495377	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/mps_trace.c.obj	3f53c222d113a173
+18329	19181	7432937344677687	.bin_timestamp	7e12fa3c18d97858
 12310	14419	7432887268086658	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_ciphersuites.c.obj	8767d48641ea080c
 12461	14521	7432887269390198	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_client.c.obj	2802bf2ec7fa747e
 12604	14652	7432887269941347	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_cookie.c.obj	65548ea466b7d5a9
@@ -268,7 +269,7 @@
 35084	37427	7432887493325096	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdmmc_periph.c.obj	5f6d97d5673d0533
 40880	43119	7432887555082165	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_time.c.obj	52a50b568b99f6ea
 47402	50206	7432887634050324	esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_page.cpp.obj	b9cd341a722d145f
-107	634	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+119	817	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
 103222	105399	7432888175019706	esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/cache_esp32.c.obj	5a7459088bbd46c3
 13524	15667	7432887277441095	esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/ssl_tls13_server.c.obj	b2156bab5fd20ba
 58043	60336	7432887725062590	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ipv6cp.c.obj	a754bf137b85d2a5
@@ -323,7 +324,7 @@
 29994	31900	7432887442333494	esp-idf/hal/CMakeFiles/__idf_hal.dir/sdmmc_hal.c.obj	35d3a6b508b454bc
 16965	19567	7432887312934745	esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_ota_app_desc.c.obj	b60d55da3a997090
 17067	19718	7432887314241730	esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/flash_brownout_hook.c.obj	acc1c07ed08d3c58
-127827	129730	7432888425205057	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	20f0a745d49b01ae
+156	732	7432937160104281	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	20f0a745d49b01ae
 101870	103966	7432888163508285	esp-idf/esp_ringbuf/CMakeFiles/__idf_esp_ringbuf.dir/ringbuf.c.obj	799833254f3958a6
 17215	19883	7432887316253922	esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_drivers.c.obj	a87900d8c1da94c1
 17448	20152	7432887320068123	esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_chip_issi.c.obj	c2cf948d41e8e42a
@@ -380,6 +381,7 @@
 21084	23723	7432887356344322	esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/int_wdt.c.obj	d09c488a2557dbe4
 31092	33053	7432887454717986	esp-idf/hal/CMakeFiles/__idf_hal.dir/spi_hal_iram.c.obj	cf6bc28443971735
 51293	53715	7432887658312797	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/apps/netbiosns/netbiosns.c.obj	1208c346ec432b9a
+19181	19317	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
 21395	24033	7432887354994726	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-update	4aece7190abd12f2
 47517	50082	7432887633662897	esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_pagemanager.cpp.obj	32be92b0a04dad65
 111043	113098	7432888252894885	esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/__/__/x509_crt_bundle.S.obj	9a0c9e951daaa09f
@@ -475,7 +477,7 @@
 29585	31578	7432887439453616	esp-idf/hal/CMakeFiles/__idf_hal.dir/twai_hal_iram.c.obj	2b84530389db83e8
 29746	31671	7432887440811234	esp-idf/hal/CMakeFiles/__idf_hal.dir/i2s_hal.c.obj	95c4f0a200584798
 30854	32863	7432887451038632	esp-idf/hal/CMakeFiles/__idf_hal.dir/brownout_hal.c.obj	e8bb73b72087f137
-107	634	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+119	817	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
 29876	31790	7432887441317886	esp-idf/hal/CMakeFiles/__idf_hal.dir/sdm_hal.c.obj	b9c25f872d2541f8
 48382	50896	7432887636919922	esp-idf/nvs_flash/CMakeFiles/__idf_nvs_flash.dir/src/nvs_types.cpp.obj	14df02db55c99945
 30744	32722	7432887449856237	esp-idf/hal/CMakeFiles/__idf_hal.dir/aes_hal.c.obj	9aa3ba1b3d6dbdfc
@@ -493,6 +495,7 @@
 32395	34375	7432887467601924	esp-idf/heap/CMakeFiles/__idf_heap.dir/heap_caps_init.c.obj	eb3fc726b17a122e
 32524	34493	7432887468641747	esp-idf/heap/CMakeFiles/__idf_heap.dir/multi_heap.c.obj	a7d9456137900c53
 32615	34619	7432887471441333	esp-idf/heap/CMakeFiles/__idf_heap.dir/tlsf/tlsf.c.obj	67dc0c51671ba31b
+14778	15041	7432896534742012	CMakeFiles/nextgenGreenhouse.elf.dir/project_elf_src_esp32.c.obj	83594fd5eb597968
 32722	34750	7432887470190852	esp-idf/heap/CMakeFiles/__idf_heap.dir/port/memory_layout_utils.c.obj	9430eae9aede29ad
 32951	34964	7432887471624899	esp-idf/soc/CMakeFiles/__idf_soc.dir/lldesc.c.obj	bc4346f6f1d441bb
 34620	36828	7432887488777610	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/timer_periph.c.obj	f9248a72de9b8a5e
@@ -508,9 +511,9 @@
 34872	37112	7432887491343627	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mcpwm_periph.c.obj	db91898916d8a16f
 63791	66656	7432887783857701	esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/ap/comeback_token.c.obj	b862ed2a57c26cbe
 34964	37276	7432887492316595	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mpi_periph.c.obj	12be723c7d909547
-46902	48840	7432887612911962	esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/esp_event_private.c.obj	490db87793e38943
-35541	38060	7432887498530248	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/rtc_io_periph.c.obj	9659d5aa6d1c98a8
 40127	42596	7432887547234192	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/esp_clock_output.c.obj	c6d422454fba3452
+35541	38060	7432887498530248	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/rtc_io_periph.c.obj	9659d5aa6d1c98a8
+46902	48840	7432887612911962	esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/esp_event_private.c.obj	490db87793e38943
 61770	64095	7432887765858652	esp-idf/esp_netif/CMakeFiles/__idf_esp_netif.dir/lwip/esp_netif_lwip.c.obj	4b4d80ca2e712a49
 58574	60957	7432887730303135	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/multilink.c.obj	23acc2251846064
 35644	38243	7432887500486259	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdio_slave_periph.c.obj	5e45b7acaf6f5c80
@@ -558,7 +561,7 @@
 41369	43409	7432887557855573	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/esp_crypto_lock.c.obj	ea8ddd6c67708781
 41688	43675	7432887561010786	esp-idf/freertos/CMakeFiles/__idf_freertos.dir/heap_idf.c.obj	a7ede34b50d526ac
 42007	43891	7432887563269828	esp-idf/freertos/CMakeFiles/__idf_freertos.dir/port_common.c.obj	9f5b5a38296ca822
-98364	98602	7432888122277490	esp-idf/esp_app_format/libesp_app_format.a	cb5bf38bf9411ddb
+492	725	7432934779867843	esp-idf/esp_app_format/libesp_app_format.a	cb5bf38bf9411ddb
 123779	125802	7432888381994928	esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/port/freertos/ffsystem.c.obj	54d6262cfc54f501
 42162	43985	7432887564497186	esp-idf/freertos/CMakeFiles/__idf_freertos.dir/port_systick.c.obj	d17126c9e65113fd
 42268	44077	7432887565633967	esp-idf/freertos/CMakeFiles/__idf_freertos.dir/FreeRTOS-Kernel/list.c.obj	287fcf893a3e20ee
@@ -598,6 +601,7 @@
 45482	47793	7432887600896114	esp-idf/cxx/CMakeFiles/__idf_cxx.dir/cxx_exception_stubs.cpp.obj	e407c16fdef810b
 92046	92825	7432888064507981	esp-idf/hal/libhal.a	58975d616bd06f44
 46141	48382	7432887606236478	esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/src/system_time.c.obj	f51c6e00786cc4e0
+13773	18328	7432937335557378	nextgenGreenhouse.elf	a74011a3fa3fa840
 46503	48563	7432887609295660	esp-idf/esp_timer/CMakeFiles/__idf_esp_timer.dir/src/esp_timer_impl_lac.c.obj	d7ba730d895f3333
 80832	82579	7432887951845562	esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/src/esp_eth_phy_rtl8201.c.obj	5abd9e54485d1bb4
 46634	48658	7432887610210183	esp-idf/esp_event/CMakeFiles/__idf_esp_event.dir/default_event_loop.c.obj	ac0e0dfa4e1c8b1c
@@ -654,7 +658,7 @@
 56752	58954	7432887711353118	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ccp.c.obj	a94f1e8a9973f1c9
 56859	59086	7432887712667036	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/chap-md5.c.obj	900fe8025cb9ed00
 57248	59472	7432887717740157	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/demand.c.obj	4b79f26ee513bd3c
-107	634	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+119	817	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
 123131	125332	7432888376074836	esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/diskio/diskio.c.obj	9559b6212a0fb5f6
 57380	59605	7432887719007674	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/eap.c.obj	5f52f6c559ed259d
 57519	59741	7432887719843001	esp-idf/lwip/CMakeFiles/__idf_lwip.dir/lwip/src/netif/ppp/ecp.c.obj	a6e2bf6e38d81d49
@@ -748,6 +752,7 @@
 119252	121867	7432888338473578	esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/src/crypto/srp6a/esp_srp.c.obj	8b1536c26279771c
 74431	77420	7432887891917928	esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/esp_supplicant/src/esp_hostap.c.obj	482a58d3c32fa5c6
 110696	112743	7432888250428429	esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/pm_trace.c.obj	e832469723f50fdf
+912	1101	7432946393230435	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
 74613	77560	7432887895403037	esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/esp_supplicant/src/crypto/tls_mbedtls.c.obj	4f4c1a159ab8f97
 74817	77727	7432887895423007	esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/esp_supplicant/src/crypto/fastpbkdf2.c.obj	d0dfce5e63eaf578
 75397	78156	7432887902061006	esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/esp_supplicant/src/crypto/crypto_mbedtls-rsa.c.obj	84af5e0dc9ad035
@@ -755,8 +760,9 @@
 76241	78711	7432887909064627	esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/aes-unwrap.c.obj	f3b0930e8d28a57f
 76426	78824	7432887911229139	esp-idf/wpa_supplicant/CMakeFiles/__idf_wpa_supplicant.dir/src/crypto/aes-ccm.c.obj	9dea6092a7f0f7df
 76758	79061	7432887913311764	esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/mesh_event.c.obj	820aa2a22e8539ef
-107	634	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+119	817	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
 77561	79747	7432887920427913	esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/wifi_default_ap.c.obj	404e8c9573fa73ed
+1942	2103	7432934793671727	esp-idf/main/libmain.a	2eb30b40cb1de17c
 77877	80016	7432887924346648	esp-idf/esp_wifi/CMakeFiles/__idf_esp_wifi.dir/src/smartconfig_ack.c.obj	b976ee59e0b6dd97
 78030	80138	7432887926635200	esp-idf/http_parser/CMakeFiles/__idf_http_parser.dir/http_parser.c.obj	2e70eed1de4d26a3
 113681	115897	7432888280630266	esp-idf/console/CMakeFiles/__idf_console.dir/argtable3/arg_end.c.obj	3ebd3b191bdb3ee6
@@ -857,11 +863,11 @@
 128468	129842	7432888427208570	esp-idf/console/libconsole.a	20d594c6670498b8
 107129	109126	7432888216140385	esp-idf/driver/CMakeFiles/__idf_driver.dir/mcpwm/mcpwm_gen.c.obj	7c02f04daebf4461
 107427	109503	7432888219728968	esp-idf/driver/CMakeFiles/__idf_driver.dir/mcpwm/mcpwm_timer.c.obj	8909ca106fe4abc9
-107	634	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-107	634	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+119	817	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+119	817	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
 111903	113960	7432888262100730	esp-idf/unity/CMakeFiles/__idf_unity.dir/unity_utils_freertos.c.obj	305a252ac07a190b
-107	634	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-107	634	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+119	817	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+119	817	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
 108322	110464	7432888229204751	esp-idf/driver/CMakeFiles/__idf_driver.dir/rmt/rmt_tx.c.obj	833ebcb63647c725
 108869	111043	7432888233774659	esp-idf/driver/CMakeFiles/__idf_driver.dir/sigma_delta/sdm.c.obj	f79dcfe369d73654
 109127	111308	7432888238080335	esp-idf/driver/CMakeFiles/__idf_driver.dir/spi/gpspi/spi_common.c.obj	ca1fafd1576238
@@ -941,304 +947,633 @@
 129196	130198	7432888435794134	esp-idf/json/libjson.a	531494e6fc3944b8
 129312	130199	7432888436916234	esp-idf/mqtt/libmqtt.a	730b5570df3024e4
 129412	130305	7432888438163411	esp-idf/nvs_sec_provider/libnvs_sec_provider.a	7e817a6b94eaf689
-127640	130439	7432888440629900	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
+727	1654	7432934788842234	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
 129843	130591	7432888442143504	esp-idf/esp32-ds18b20/libesp32-ds18b20.a	dc70251895d74f8d
 129946	130669	7432888442942123	esp-idf/protocomm/libprotocomm.a	db90a00c472b2632
 130053	130699	7432888443274824	esp-idf/fatfs/libfatfs.a	4b2b900a640b3776
-130199	130712	7432888443375430	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
-49	12914	7432895450712952	build.ninja	3b063e32816dee92
+733	894	7432937161749799	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+50	11723	7432947388455764	build.ninja	3b063e32816dee92
 122	582	7432894799966566	esp-idf/esp_local_ctrl/libesp_local_ctrl.a	91a2ea8bbd58a3a1
-42	13671	7432895450712952	build.ninja	3b063e32816dee92
-152	468	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-152	468	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-152	468	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-152	468	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-152	468	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-152	468	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-152	468	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-152	468	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-129	493	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-129	493	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-129	493	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-129	493	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-129	493	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-129	493	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-129	493	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-129	493	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-101	363	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-101	363	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-101	363	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-101	363	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-101	363	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-101	363	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-101	363	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-101	363	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-117	426	7432896388581206	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
-429	602	7432896390380992	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
-603	743	7432896391770260	esp-idf/main/libmain.a	2eb30b40cb1de17c
-743	14777	7432896531686366	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-743	14777	7432896531686366	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-14778	15041	7432896534742012	CMakeFiles/nextgenGreenhouse.elf.dir/project_elf_src_esp32.c.obj	83594fd5eb597968
-15041	20042	7432896584504609	nextgenGreenhouse.elf	a74011a3fa3fa840
-20043	20924	7432896593623491	.bin_timestamp	7e12fa3c18d97858
-20043	20924	7432896593623491	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-20925	21141	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-20925	21141	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-100	486	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-100	486	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-100	486	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-100	486	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-100	486	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-100	486	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-100	486	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-100	486	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-130	543	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-130	543	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-130	543	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-130	543	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-130	543	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-130	543	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-130	543	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-130	543	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-146	833	7432898495985072	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-839	985	7432898497551236	esp-idf/main/libmain.a	2eb30b40cb1de17c
-986	14021	7432898627515206	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-986	14021	7432898627515206	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-14021	18898	7432898676258061	nextgenGreenhouse.elf	a74011a3fa3fa840
-18899	19650	7432898684195121	.bin_timestamp	7e12fa3c18d97858
-18899	19650	7432898684195121	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-19651	19787	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-19651	19787	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-96	482	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-96	482	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-96	482	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-96	482	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-96	482	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-96	482	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-96	482	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-96	482	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-111	765	7432901214106719	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-774	923	7432901215808708	esp-idf/main/libmain.a	2eb30b40cb1de17c
-924	14285	7432901349008009	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-924	14285	7432901349008009	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-14286	20654	7432901412613258	nextgenGreenhouse.elf	a74011a3fa3fa840
-20655	21187	7432901418325629	.bin_timestamp	7e12fa3c18d97858
-20655	21187	7432901418325629	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-21188	21375	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-21188	21375	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-97	489	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-97	489	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-97	489	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-97	489	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-97	489	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-97	489	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-97	489	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-97	489	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-111	838	7432902849610682	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-843	1009	7432902851329672	esp-idf/main/libmain.a	2eb30b40cb1de17c
-1009	12253	7432902963614552	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-1009	12253	7432902963614552	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-12253	17761	7432903018494199	nextgenGreenhouse.elf	a74011a3fa3fa840
-17762	18507	7432903026347804	.bin_timestamp	7e12fa3c18d97858
-17762	18507	7432903026347804	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-18507	18655	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-18507	18655	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-93	494	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-93	494	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-93	494	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-93	494	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-93	494	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-93	494	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-93	494	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-93	494	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-108	777	7432906078407938	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-783	949	7432906080208890	esp-idf/main/libmain.a	2eb30b40cb1de17c
-950	12252	7432906192824765	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-950	12252	7432906192824765	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-12253	16905	7432906239406560	nextgenGreenhouse.elf	a74011a3fa3fa840
-16906	17571	7432906246399950	.bin_timestamp	7e12fa3c18d97858
-16906	17571	7432906246399950	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-17572	17724	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-17572	17724	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-91	486	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-91	486	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-91	486	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-91	486	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-91	486	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-91	486	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-91	486	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-91	486	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-105	768	7432907573407660	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-775	922	7432907574921545	esp-idf/main/libmain.a	2eb30b40cb1de17c
-922	12365	7432907689192041	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-922	12365	7432907689192041	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-12365	17680	7432907741993313	nextgenGreenhouse.elf	a74011a3fa3fa840
-17681	18294	7432907748689740	.bin_timestamp	7e12fa3c18d97858
-17681	18294	7432907748689740	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-18295	18473	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-18295	18473	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-96	469	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-96	469	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-96	469	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-96	469	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-96	469	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-96	469	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-96	469	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-96	469	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-111	756	7432908091061680	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-760	928	7432908092828273	esp-idf/main/libmain.a	2eb30b40cb1de17c
-928	11554	7432908198807205	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-928	11554	7432908198807205	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-11554	15829	7432908241455635	nextgenGreenhouse.elf	a74011a3fa3fa840
-15830	16432	7432908247808526	.bin_timestamp	7e12fa3c18d97858
-15830	16432	7432908247808526	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-16432	16562	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-16432	16562	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-114	492	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-114	492	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-114	492	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-114	492	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-114	492	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-114	492	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-114	492	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-114	492	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-129	777	7432909267356911	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-783	928	7432909268883227	esp-idf/main/libmain.a	2eb30b40cb1de17c
-928	11696	7432909376206367	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-928	11696	7432909376206367	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-11697	16780	7432909427006428	nextgenGreenhouse.elf	a74011a3fa3fa840
-16780	17404	7432909433654464	.bin_timestamp	7e12fa3c18d97858
-16780	17404	7432909433654464	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-17405	17527	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-17405	17527	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-91	463	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-91	463	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-91	463	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-91	463	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-91	463	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-91	463	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-91	463	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-91	463	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-107	744	7432910282509035	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-751	895	7432910284020876	esp-idf/main/libmain.a	2eb30b40cb1de17c
-895	14222	7432910416814795	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-895	14222	7432910416814795	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-14223	19949	7432910474297779	nextgenGreenhouse.elf	a74011a3fa3fa840
-19950	20340	7432910478492386	.bin_timestamp	7e12fa3c18d97858
-19950	20340	7432910478492386	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-20340	20472	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-20340	20472	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-99	690	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-99	690	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-99	690	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-99	690	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-99	690	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-99	690	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-99	690	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-99	690	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-175	745	7432913340847458	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
-747	912	7432913342508784	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
-115	960	7432913343006209	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-965	1125	7432913344672277	esp-idf/main/libmain.a	2eb30b40cb1de17c
-1126	15446	7432913487307302	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-1126	15446	7432913487307302	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-15447	20162	7432913534609562	nextgenGreenhouse.elf	a74011a3fa3fa840
-20162	20736	7432913540790721	.bin_timestamp	7e12fa3c18d97858
-20162	20736	7432913540790721	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-20736	20861	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-20736	20861	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-103	359	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-103	359	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-103	359	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-103	359	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-103	359	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-103	359	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-103	359	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-103	359	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-117	414	7432916220516963	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
-417	592	7432916222358356	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
-593	15067	7432916366706600	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-593	15067	7432916366706600	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-15067	19778	7432916413676289	nextgenGreenhouse.elf	a74011a3fa3fa840
-19779	20383	7432916420253897	.bin_timestamp	7e12fa3c18d97858
-19779	20383	7432916420253897	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-20383	20517	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-20383	20517	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-133	642	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-133	642	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-133	642	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-133	642	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-133	642	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-133	642	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-133	642	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-133	642	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-149	971	7432919947967551	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	4da1ebfbe1ad608
-101	361	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-101	361	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-101	361	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-101	361	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-101	361	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-101	361	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-101	361	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-101	361	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-117	428	7432924472228116	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
-431	607	7432924474029882	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
-607	767	7432924475630219	esp-idf/main/libmain.a	2eb30b40cb1de17c
-768	15729	7432924624933197	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-768	15729	7432924624933197	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-15730	22558	7432924692975733	nextgenGreenhouse.elf	a74011a3fa3fa840
-22558	23354	7432924701527982	.bin_timestamp	7e12fa3c18d97858
-22558	23354	7432924701527982	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-23355	23520	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-23355	23520	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-101	361	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-101	361	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-101	361	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-101	361	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-101	361	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-101	361	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-101	361	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-101	361	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-116	431	7432924935338642	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
-433	584	7432924936874914	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
-584	15242	7432925083021886	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-584	15242	7432925083021886	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-15242	21399	7432925144648122	nextgenGreenhouse.elf	a74011a3fa3fa840
-21400	22240	7432925153343138	.bin_timestamp	7e12fa3c18d97858
-21400	22240	7432925153343138	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-22241	22436	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-22241	22436	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-100	358	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-100	358	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-100	358	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-100	358	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-100	358	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-100	358	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-100	358	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-100	358	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-116	429	7432928356749792	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
-433	602	7432928358505328	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
-603	13412	7432928486339744	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-603	13412	7432928486339744	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-13412	18159	7432928533647262	nextgenGreenhouse.elf	a74011a3fa3fa840
-18161	18776	7432928540208069	.bin_timestamp	7e12fa3c18d97858
-18161	18776	7432928540208069	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-18777	18955	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-18777	18955	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-111	488	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-111	488	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
-111	488	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
-111	488	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
-111	488	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
-111	488	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
-111	488	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
-111	488	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
-128	558	7432929256421964	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
-559	850	7432929259267347	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
-851	15847	7432929409103537	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-851	15847	7432929409103537	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
-15848	21916	7432929469705063	nextgenGreenhouse.elf	a74011a3fa3fa840
-21916	22723	7432929477958541	.bin_timestamp	7e12fa3c18d97858
-21916	22723	7432929477958541	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
-22724	22884	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
-22724	22884	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+241	910	7432946391219833	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+894	13773	7432937290205099	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+894	13773	7432937290205099	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+18329	19181	7432937344677687	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+19181	19317	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+46	14163	7432947388455764	build.ninja	3b063e32816dee92
+114	746	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+114	746	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+114	746	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+114	746	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+114	746	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+114	746	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+114	746	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+114	746	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+121	633	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+121	633	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+121	633	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+121	633	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+121	633	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+121	633	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+121	633	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+121	633	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+123	631	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+123	631	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+123	631	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+123	631	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+123	631	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+123	631	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+123	631	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+123	631	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+203	974	7432949261453577	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+106	751	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+106	751	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+106	751	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+106	751	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+106	751	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+106	751	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+106	751	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+106	751	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+189	799	7432950704656654	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+802	962	7432950706241110	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+236	1079	7432950707452406	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+95	674	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+95	674	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+95	674	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+95	674	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+95	674	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+95	674	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+95	674	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+95	674	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+169	733	7432951343586073	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+735	877	7432951345057464	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+113	917	7432951345425632	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	3ecbfccf37777161
+98	424	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+98	424	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+98	424	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+98	424	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+98	424	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+98	424	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+98	424	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+98	424	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+100	389	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+100	389	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+100	389	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+100	389	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+100	389	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+100	389	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+100	389	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+100	389	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+115	616	7432952026911629	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+618	779	7432952028523905	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+780	925	7432952030027365	esp-idf/main/libmain.a	2eb30b40cb1de17c
+926	13980	7432952159904824	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+926	13980	7432952159904824	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+13981	14338	7432952164112785	CMakeFiles/nextgenGreenhouse.elf.dir/project_elf_src_esp32.c.obj	77c2d1ab84600872
+14339	20377	7432952224138211	nextgenGreenhouse.elf	c153fe92f606b3ad
+20378	21155	7432952232266158	.bin_timestamp	7e12fa3c18d97858
+20378	21155	7432952232266158	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+21155	21360	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+21155	21360	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+100	547	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+100	547	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+100	547	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+100	547	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+100	547	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+100	547	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+100	547	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+100	547	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+102	621	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+102	621	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+102	621	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+102	621	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+102	621	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+102	621	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+102	621	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+102	621	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+178	918	7432953076411134	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+107	959	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+107	959	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+107	959	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+107	959	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+107	959	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+107	959	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+107	959	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+107	959	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+226	997	7432955033715871	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+999	1202	7432955035790121	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+313	1338	7432955037122641	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+108	763	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+108	763	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+108	763	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+108	763	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+108	763	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+108	763	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+108	763	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+108	763	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+189	785	7432955590203181	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+787	966	7432955592000088	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+236	1143	7432955593768024	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+149	842	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+149	842	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+149	842	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+149	842	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+149	842	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+149	842	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+149	842	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+149	842	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+162	769	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+162	769	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+162	769	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+162	769	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+162	769	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+162	769	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+162	769	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+162	769	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+147	747	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+147	747	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+147	747	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+147	747	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+147	747	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+147	747	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+147	747	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+147	747	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+149	766	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+149	766	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+149	766	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+149	766	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+149	766	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+149	766	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+149	766	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+149	766	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+223	1242	7432963893172472	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+244	860	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+244	860	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+244	860	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+244	860	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+244	860	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+244	860	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+244	860	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+244	860	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+202	845	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+202	845	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+202	845	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+202	845	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+202	845	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+202	845	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+202	845	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+202	845	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+157	926	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+157	926	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+157	926	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+157	926	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+157	926	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+157	926	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+157	926	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+157	926	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+215	935	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+215	935	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+215	935	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+215	935	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+215	935	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+215	935	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+215	935	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+215	935	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+299	1038	7432966237505990	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+1040	1293	7432966240035792	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+147	725	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+147	725	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+147	725	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+147	725	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+147	725	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+147	725	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+147	725	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+147	725	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+163	809	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+163	809	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+163	809	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+163	809	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+163	809	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+163	809	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+163	809	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+163	809	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+255	1267	7432968293924522	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+192	905	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+192	905	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+192	905	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+192	905	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+192	905	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+192	905	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+192	905	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+192	905	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+351	1476	7432968763826679	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+160	835	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+160	835	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+160	835	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+160	835	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+160	835	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+160	835	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+160	835	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+160	835	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+303	1446	7432969992174518	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+153	749	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+153	749	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+153	749	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+153	749	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+153	749	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+153	749	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+153	749	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+153	749	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+149	817	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+149	817	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+149	817	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+149	817	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+149	817	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+149	817	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+149	817	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+149	817	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+227	893	7432971224111434	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+898	1103	7432971226201358	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+170	1287	7432971227925266	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	3ecbfccf37777161
+161	771	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+161	771	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+161	771	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+161	771	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+161	771	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+161	771	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+161	771	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+161	771	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+239	1234	7432971415402127	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+1235	1601	7432971419115735	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+162	597	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+162	597	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+162	597	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+162	597	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+162	597	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+162	597	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+162	597	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+162	597	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+180	1131	7432972119680820	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	3ecbfccf37777161
+1139	1388	7432972122202775	esp-idf/main/libmain.a	2eb30b40cb1de17c
+1388	16263	7432972270502086	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1388	16263	7432972270502086	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+16263	23000	7432972338001623	nextgenGreenhouse.elf	c153fe92f606b3ad
+23001	23893	7432972347332349	.bin_timestamp	7e12fa3c18d97858
+23001	23893	7432972347332349	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+23894	24077	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+23894	24077	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+155	499	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+155	499	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+155	499	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+155	499	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+155	499	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+155	499	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+155	499	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+155	499	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+143	472	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+143	472	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+143	472	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+143	472	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+143	472	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+143	472	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+143	472	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+143	472	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+162	584	7432973700499905	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+587	867	7432973703350813	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+868	15965	7432973853663975	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+868	15965	7432973853663975	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+15966	22973	7432973924031051	nextgenGreenhouse.elf	c153fe92f606b3ad
+22974	23812	7432973932847471	.bin_timestamp	7e12fa3c18d97858
+22974	23812	7432973932847471	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+23813	23985	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+23813	23985	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+145	724	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+145	724	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+145	724	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+145	724	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+145	724	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+145	724	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+145	724	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+145	724	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+183	790	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+183	790	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+183	790	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+183	790	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+183	790	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+183	790	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+183	790	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+183	790	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+208	1433	7432975375901675	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	3ecbfccf37777161
+209	634	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+209	634	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+209	634	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+209	634	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+209	634	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+209	634	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+209	634	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+209	634	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+167	506	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+167	506	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+167	506	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+167	506	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+167	506	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+167	506	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+167	506	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+167	506	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+164	502	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+164	502	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+164	502	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+164	502	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+164	502	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+164	502	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+164	502	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+164	502	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+165	526	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+165	526	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+165	526	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+165	526	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+165	526	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+165	526	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+165	526	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+165	526	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+267	821	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+267	821	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+267	821	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+267	821	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+267	821	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+267	821	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+267	821	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+267	821	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+360	959	7432979093797789	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+962	1199	7432979096245463	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+192	684	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+192	684	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+192	684	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+192	684	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+192	684	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+192	684	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+192	684	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+192	684	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+215	1189	7432980076151701	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	3ecbfccf37777161
+1198	1399	7432980078270875	esp-idf/main/libmain.a	2eb30b40cb1de17c
+1399	17545	7432980239271500	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1399	17545	7432980239271500	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+17546	24614	7432980309961640	nextgenGreenhouse.elf	c153fe92f606b3ad
+24615	25459	7432980318901561	.bin_timestamp	7e12fa3c18d97858
+24615	25459	7432980318901561	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+25459	25638	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+25459	25638	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+150	757	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+150	757	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+150	757	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+150	757	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+150	757	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+150	757	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+150	757	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+150	757	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+190	829	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+190	829	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+190	829	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+190	829	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+190	829	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+190	829	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+190	829	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+190	829	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+157	779	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+157	779	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+157	779	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+157	779	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+157	779	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+157	779	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+157	779	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+157	779	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+203	880	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+203	880	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+203	880	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+203	880	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+203	880	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+203	880	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+203	880	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+203	880	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+160	809	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+160	809	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+160	809	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+160	809	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+160	809	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+160	809	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+160	809	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+160	809	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+157	755	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+157	755	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+157	755	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+157	755	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+157	755	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+157	755	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+157	755	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+157	755	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+186	774	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+186	774	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+186	774	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+186	774	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+186	774	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+186	774	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+186	774	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+186	774	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+178	937	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+178	937	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+178	937	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+178	937	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+178	937	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+178	937	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+178	937	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+178	937	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+210	848	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+210	848	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+210	848	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+210	848	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+210	848	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+210	848	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+210	848	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+210	848	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+145	797	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+145	797	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+145	797	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+145	797	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+145	797	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+145	797	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+145	797	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+145	797	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+139	799	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+139	799	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+139	799	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+139	799	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+139	799	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+139	799	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+139	799	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+139	799	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+193	847	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+193	847	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+193	847	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+193	847	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+193	847	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+193	847	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+193	847	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+193	847	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+275	970	7433460203496316	esp-idf/Control_temperatura/CMakeFiles/__idf_Control_temperatura.dir/Control_temperatura.c.obj	3a581866da6b14bc
+974	1252	7433460206346910	esp-idf/Control_temperatura/libControl_temperatura.a	c31197c7c1cf653a
+212	1315	7433460206914323	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	3ecbfccf37777161
+317	1362	7433460207379063	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+1366	1544	7433460209265765	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+1545	1755	7433460211345375	esp-idf/main/libmain.a	2eb30b40cb1de17c
+1756	16001	7433460353500722	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1756	16001	7433460353500722	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+16001	22547	7433460418697399	nextgenGreenhouse.elf	c153fe92f606b3ad
+22548	23396	7433460427762120	.bin_timestamp	7e12fa3c18d97858
+22548	23396	7433460427762120	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+23397	23562	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+23397	23562	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+148	584	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+148	584	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+148	584	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+148	584	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+148	584	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+148	584	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+148	584	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+148	584	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+152	578	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+152	578	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+152	578	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+152	578	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+152	578	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+152	578	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+152	578	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+152	578	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+170	1060	7433462995297764	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	3ecbfccf37777161
+1068	1287	7433462997597912	esp-idf/main/libmain.a	2eb30b40cb1de17c
+1287	15366	7433463138030555	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1287	15366	7433463138030555	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+15367	21246	7433463196821977	nextgenGreenhouse.elf	c153fe92f606b3ad
+21247	21914	7433463203597945	.bin_timestamp	7e12fa3c18d97858
+21247	21914	7433463203597945	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+21917	22068	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+21917	22068	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+138	457	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+138	457	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+138	457	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+138	457	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+138	457	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+138	457	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+138	457	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+138	457	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+155	873	7433464704399019	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+876	1093	7433464706669797	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+1093	14929	7433464844696452	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1093	14929	7433464844696452	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+14929	20624	7433464901545342	nextgenGreenhouse.elf	c153fe92f606b3ad
+20625	21310	7433464908835882	.bin_timestamp	7e12fa3c18d97858
+20625	21310	7433464908835882	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+21311	21477	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+21311	21477	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+148	478	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+148	478	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+148	478	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+148	478	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+148	478	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+148	478	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+148	478	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+148	478	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+167	926	7433468066798404	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+933	1126	7433468068819031	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+1126	14288	7433468200117304	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1126	14288	7433468200117304	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+14289	20086	7433468258095569	nextgenGreenhouse.elf	c153fe92f606b3ad
+20087	20803	7433468265597189	.bin_timestamp	7e12fa3c18d97858
+20087	20803	7433468265597189	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+20803	20976	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+20803	20976	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+142	535	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+142	535	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+142	535	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+142	535	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+142	535	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+142	535	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+142	535	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+142	535	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+159	912	7433469742910440	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+916	1142	7433469745297702	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+1142	14489	7433469878452618	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1142	14489	7433469878452618	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+14489	21318	7433469946393866	nextgenGreenhouse.elf	c153fe92f606b3ad
+21319	22070	7433469954529084	.bin_timestamp	7e12fa3c18d97858
+21319	22070	7433469954529084	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+22070	22232	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+22070	22232	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+456	1038	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+456	1038	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+456	1038	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+456	1038	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+456	1038	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+456	1038	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+456	1038	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+456	1038	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+496	1387	7433475053623916	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+1390	1599	7433475055760823	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+1599	15549	7433475194997858	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1599	15549	7433475194997858	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+15550	21946	7433475258795267	nextgenGreenhouse.elf	c153fe92f606b3ad
+21947	22631	7433475266122891	.bin_timestamp	7e12fa3c18d97858
+21947	22631	7433475266122891	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+22631	22798	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+22631	22798	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+155	504	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+155	504	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+155	504	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+155	504	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+155	504	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+155	504	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+155	504	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+155	504	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+175	850	7433476743612600	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+853	1059	7433476745717211	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+1060	20673	7433476941320875	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+1060	20673	7433476941320875	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+20674	28422	7433477018599548	nextgenGreenhouse.elf	c153fe92f606b3ad
+28423	29238	7433477027498681	.bin_timestamp	7e12fa3c18d97858
+28423	29238	7433477027498681	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+29239	29447	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+29239	29447	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+136	2277	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+136	2277	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+136	2277	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+136	2277	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+136	2277	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+136	2277	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+136	2277	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+136	2277	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+492	3852	7433487318496787	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	3ecbfccf37777161
+592	3879	7433487318752284	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+3883	4978	7433487329766550	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+4978	5109	7433487331066582	esp-idf/main/libmain.a	2eb30b40cb1de17c
+5109	22210	7433487501597776	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+5109	22210	7433487501597776	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+22211	29880	7433487578211195	nextgenGreenhouse.elf	c153fe92f606b3ad
+29881	30951	7433487589510254	.bin_timestamp	7e12fa3c18d97858
+29881	30951	7433487589510254	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+30951	31147	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+30951	31147	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+98	379	7432888028622575	bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+98	379	7432888028622575	bootloader/bootloader.elf	13a70296b01a91a6
+98	379	7432888028622575	bootloader/bootloader.bin	13a70296b01a91a6
+98	379	7432888028622575	bootloader/bootloader.map	13a70296b01a91a6
+98	379	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	13a70296b01a91a6
+98	379	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.elf	13a70296b01a91a6
+98	379	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.bin	13a70296b01a91a6
+98	379	7432888028622575	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/bootloader.map	13a70296b01a91a6
+113	626	7433491427981121	esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir/Blynk_MQTT_Connect.c.obj	dd593300543a3634
+628	774	7433491429530554	esp-idf/Blynk_MQTT_Connect/libBlynk_MQTT_Connect.a	4bedd42f2c0d6b1d
+774	14001	7433491561372413	esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+774	14001	7433491561372413	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esp_system/ld/sections.ld	f0e1f98f18b237eb
+14001	19895	7433491620343142	nextgenGreenhouse.elf	c153fe92f606b3ad
+19896	20656	7433491628299073	.bin_timestamp	7e12fa3c18d97858
+19896	20656	7433491628299073	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/.bin_timestamp	7e12fa3c18d97858
+20657	20820	0	esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550
+20657	20820	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/esptool_py/CMakeFiles/app_check_size	2ef24f191876b550

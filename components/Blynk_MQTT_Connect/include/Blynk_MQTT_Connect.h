@@ -30,6 +30,8 @@
 
 #include "passwords.h" //Libreria para configurar todas las credenciales/contraseñas del proyecto
 
+#include "Control_temperatura.h" //Libreria para configurar el control de temperatura
+
 //Definimos los tags para los logs
 static const char *MQTT_TAG = "Cliente MQTT";
 static const char *WIFI_TAG = "Estacion WIFI";
@@ -93,6 +95,13 @@ static void inicia_cliente_mqtt(void);
 static void log_error_if_nonzero(const char *message, int error_code); //Funcion para loggear errores
 
 /**
+ * @brief Función para apuntar a los parámetros de temperatura
+ * @param parametros estructura de parámetros de temperatura que le pasamos a la función para apuntar a dichas variables con un puntero
+ */
+void apunta_parametros_temperatura(param_cont_temperatura* parametros);
+
+
+/**
  * @brief Funcion para enviar datos a Blynk
  * @details Un MUX que recibe la data de Blynk, y manda el dato a los actuadores, determinando a que actuador debe enviarse
  * @param event evento de MQTT
@@ -102,7 +111,7 @@ void recibe_Blynk(esp_mqtt_event_handle_t event);
 /**
  * @brief Funcion para recibir datos de Blynk
  * @details Un DEMUX que recibe la data de los sensores, y manda el dato a Blynk, determinando a que topic debe enviarse
- * @param id_sensor identificador del sensor
+ * @param cmd_id identificador del comando. Determina que hacer con el dato que se envia
  * @param data datos del sensor
  */
-void envia_Blynk(char *id_sensor, char *data);
+void envia_Blynk(char *cmd_id, char *data);

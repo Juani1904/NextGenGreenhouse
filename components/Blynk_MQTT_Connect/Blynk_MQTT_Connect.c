@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "Blynk_MQTT_Connect.h"
+#include "Control_temperatura.h"
 
 /*------------------------------------------------------CONFIGURACIÓN WIFI------------------------------------------------------------ */
 
@@ -17,6 +18,11 @@ static EventGroupHandle_t WIFI_EVENT_GROUP;
 //Definimos la estructura cliente como variable global
 esp_mqtt_client_handle_t client;
 
+/*-----------------------------------------------------Control de temperatura-----------------------------------------*/
+//Declaramos un puntero a la estructura de parametros de control de temperatura
+param_cont_temperatura *parametros_temperatura_Blynk;
+
+
 //-------------------------------------------------MAIN: conecta_servidor------------------------------------------------------------
 
 void conecta_servidor(void)
@@ -26,13 +32,13 @@ void conecta_servidor(void)
     ESP_LOGI(MQTT_TAG, "[APP] Memoria libre: %" PRIu32 " bytes", esp_get_free_heap_size());
     ESP_LOGI(MQTT_TAG, "[APP] Versión IDF: %s", esp_get_idf_version());
 
-    esp_log_level_set("*", ESP_LOG_INFO);
+    /* esp_log_level_set("*", ESP_LOG_INFO);
     esp_log_level_set("mqtt_client", ESP_LOG_VERBOSE);
     esp_log_level_set("mqtt_example", ESP_LOG_VERBOSE);
     esp_log_level_set("transport_base", ESP_LOG_VERBOSE);
     esp_log_level_set("esp-tls", ESP_LOG_VERBOSE);
     esp_log_level_set("transport", ESP_LOG_VERBOSE);
-    esp_log_level_set("outbox", ESP_LOG_VERBOSE);
+    esp_log_level_set("outbox", ESP_LOG_VERBOSE); */
 
     //Utilizamos la funcion de la libreria NVS (Non Volatile Storage) que nos permite almacenar datos en la memoria flash
     //En esta memoria se van a almacenar temporalmente sobre todo la información de los logs, eventos, etc
@@ -45,13 +51,13 @@ void conecta_servidor(void)
       ret = nvs_flash_init();
     }
     //Verificamos que el return de la inicializacion de la memoria flash sea correcto (ESP_OK)
-    ESP_ERROR_CHECK(ret);
+    //ESP_ERROR_CHECK(ret);
     
     //Utilizamos ESP-NETIF para crear una capa de abstraction para la aplicación, por encima del stack TCP/IP, para no tener que lidiar con el stack directamente
-    ESP_ERROR_CHECK(esp_netif_init());
+    esp_netif_init();
 
     //Creamos un loop de eventos del tipo "default" para atajar los eventos de la aplicacion (Eventos WIFI y Eventos MQTT)
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    esp_event_loop_create_default();
 
 
     //Inicializamos la estacion WIFI
@@ -97,20 +103,20 @@ void conecta_wifi(void)
     wifi_init_config_t config_wifi_inicio = WIFI_INIT_CONFIG_DEFAULT();
     
     //Llamamos a la funcion esp_wifi_init() para inicializar el modulo WIFI, pasandole como parametro la direccion de mem de la variable de config
-    ESP_ERROR_CHECK(esp_wifi_init(&config_wifi_inicio));
+    esp_wifi_init(&config_wifi_inicio);
 
     esp_event_handler_instance_t instance_any_id;
     esp_event_handler_instance_t instance_got_ip;
-    ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
-                                                        ESP_EVENT_ANY_ID,
-                                                        &wifi_event_handler,
-                                                        NULL,
-                                                        &instance_any_id));
-    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,
-                                                        IP_EVENT_STA_GOT_IP,
-                                                        &wifi_event_handler,
-                                                        NULL,
-                                                        &instance_got_ip));
+    esp_event_handler_instance_register(WIFI_EVENT,
+                                        ESP_EVENT_ANY_ID,
+                                        &wifi_event_handler,
+                                        NULL,
+                                        &instance_any_id);
+   esp_event_handler_instance_register(IP_EVENT,
+                                        IP_EVENT_STA_GOT_IP,
+                                        &wifi_event_handler,
+                                        NULL,
+                                        &instance_got_ip);
 
     wifi_config_t config_wifi = {
         .sta = {
@@ -128,9 +134,9 @@ void conecta_wifi(void)
             .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER,
         },
     };
-    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) ); //Establecemos el modo de la estacion WIFI. Esto para conectarnos A UN PUNTO DE ACCESO, NO CREAR UNO
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &config_wifi) ); //Establecemos la configuracion de la estacion WIFI
-    ESP_ERROR_CHECK(esp_wifi_start()); //Iniciamos el modulo WIFI
+    esp_wifi_set_mode(WIFI_MODE_STA); //Establecemos el modo de la estacion WIFI. Esto para conectarnos A UN PUNTO DE ACCESO, NO CREAR UNO
+    esp_wifi_set_config(WIFI_IF_STA, &config_wifi); //Establecemos la configuracion de la estacion WIFI
+    esp_wifi_start(); //Iniciamos el modulo WIFI
 
     ESP_LOGI(WIFI_TAG, "Establecimiento de estación WIFI finalizado");
 
@@ -159,18 +165,6 @@ void conecta_wifi(void)
 
 
 
-
-/*
- * @brief Event handler registered to receive MQTT events
- *
- *  This function is called by the MQTT client event loop.
- *
- * @param handler_args user data registered to the event.
- * @param base Event base for the handler(always MQTT Base in this example).
- * @param event_id The id for the received event.
- * @param event_data The data for the event, esp_mqtt_event_handle_t.
- */
-
 //Event handler de los eventos MQTT
 //El event loop automaticamente le pasa como parametros la base de los evetos, el id del evento y los datos del evento
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
@@ -192,8 +186,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         /*-------------------------------------------------------DOWNLINK TOPICS-------------------------------------------------------- */
         //Los topics de downlink son los topics a los que nos suscribimos para recibir datos de Blynk. Cada topic corresponde a un DATASTREAM (actuador del dashboard de blynk)
 
-        MSG_ID = esp_mqtt_client_subscribe(client, "downlink/ds/Switch", 0); //SWITCH
-        
+        MSG_ID = esp_mqtt_client_subscribe(client, "downlink/ds/temp_ideal", 0); //SWITCH
         
         //Se podria colocar un mensaje de subscripcion exitosa, sin embargo en el evento de suscripcion ya se printea un mensaje de suscripcion exitosa
         //ESP_LOGI(MQTT_TAG, "Suscripcion exitosa, MSG_ID= %d", MSG_ID);
@@ -274,10 +267,12 @@ static void inicia_cliente_mqtt(void)
 }
 
 
-
-
-
-
+//Creamos una funcion que al pasarle un parametro parametros_temperatura_Blynk apunte a la estructura de parametros de temperatura
+//Esto nos permite manipular desde este script los datos de temperatura. Esto es util a la hora de modificar parámetros DESDE Blynk al micro
+ void apunta_parametros_temperatura(param_cont_temperatura* parametros)
+{
+    parametros_temperatura_Blynk = parametros;
+}    
 
 //MUX
 void recibe_Blynk(esp_mqtt_event_handle_t event)
@@ -285,27 +280,39 @@ void recibe_Blynk(esp_mqtt_event_handle_t event)
     //Usamos la funcion strcmp para comparar la cadena de texto que llega en el topic con un string
     //Si ambos son iguales la funcion entrega un 0
     //Es necesario pasarle el tamaño de la cadena de texto que llega en el topic, para evitar el ruido
-    if (strncmp(event->topic, "downlink/ds/Switch", event->topic_len) == 0)
+    if (strncmp(event->topic,"downlink/ds/temp_ideal", event->topic_len) == 0)
     {
-        //Ejemplo LED
-        gpio_set_direction(GPIO_NUM_32, GPIO_MODE_OUTPUT);
-        gpio_set_level(GPIO_NUM_32, atoi(event->data));
-
+        parametros_temperatura_Blynk->temperatura_ideal = atoi(event->data);
     }
 }
 
 //DEMUX
-void envia_Blynk(char *id_sensor, char *data){
+void envia_Blynk(char *cmd_id, char *data){
     //ds/Switch Value
-    if (strcmp(id_sensor, "test") == 0)
+    if (strcmp(cmd_id, "test") == 0)
     {
         esp_mqtt_client_publish(client, "ds/EVENTOS_PROCESO", data, 0, 0, 0);
     }
-    else if(strcmp(id_sensor, "temp") == 0)
+    else if(strcmp(cmd_id, "temp") == 0)
     {
         esp_mqtt_client_publish(client, "ds/temp", data, 0, 0, 0);
 
     }
+    else if(strcmp(cmd_id, "sync") == 0){
+        //Como nos interesa saber el estado de la sincronización, usamos un QoS=1 y revisamos el return de la función
+        int8_t msg_id;
+        int8_t QoS=1;
+        msg_id=esp_mqtt_client_publish(client, "get/ds/all", NULL, 0, QoS, 0);
+        //Revisamos que la sincronización sea exitosa
+        if(msg_id==-1){
+            ESP_LOGI(MQTT_TAG, "Error en la sincronización");
+        }
+        else{
+            ESP_LOGI(MQTT_TAG, "Sincronización exitosa");
+        }
+        
+    }
+    
     
 }
 

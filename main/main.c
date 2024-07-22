@@ -38,16 +38,10 @@ esp_err_t crea_tareas(void);
 
 void app_main(void)
 {
+    //Nos conectamos a internet y a Blynk.Cloud
     conecta_servidor();
-    int8_t contador=0;
-    char contadorC[10];
-    /* for (int i=0 ;i<10; i++){
-        sprintf(contadorC,"%d",contador);
-        envia_Blynk("test","Hola mundo");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        contador++;
-        
-    } */
+    //Enviamos a Blynk la solicitud para que sincronice los datos con las variables del sistema
+    envia_Blynk("sync",NULL);
 
     //Creamos las tareas del sistema
     crea_tareas();
@@ -55,6 +49,8 @@ void app_main(void)
 }
 
 void vTaskMideTemperatura(void *pvParameters){
+    //Enviamos al script de Blynk la direccion de memoria de la estructura de parametros de temperatura
+    apunta_parametros_temperatura(&parametros_temperatura);
     //Seteamos la resistencia de pull up interna.
     gpio_set_pull_mode(GPIO_DS18B20_0, GPIO_PULLUP_ONLY);
     //Aplicamos un delay de 2 segundos para que el sensor se estabilice
@@ -70,7 +66,10 @@ void vTaskMideTemperatura(void *pvParameters){
     char temperaturaC[10];
     sprintf(temperaturaC,"%.1f",parametros_temperatura.temperatura);
     envia_Blynk("temp",temperaturaC);
-    printf("Temperature reading: %.1f\n", parametros_temperatura.temperatura);
+    printf("Temperatura invernadero: %.1f\n", parametros_temperatura.temperatura);
+    printf("La temperatura ideal es: %d\n",parametros_temperatura.temperatura_ideal);
+    //Printeo temp ideal
+    //printf("Temperatura ideal: %d\n", parametros_temperatura.temperatura_ideal);
     vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO));
     }
     

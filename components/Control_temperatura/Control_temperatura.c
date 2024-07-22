@@ -65,3 +65,6 @@ void mide_temperatura(param_cont_temperatura *parametros){
         ESP_LOGE(T_SENSOR_TAG,"Ocurrió un error leyendo la temperatura\n");
     }
 }
+
+
+
