@@ -281,8 +281,11 @@ void recibe_Blynk(esp_mqtt_event_handle_t event)
     //Si ambos son iguales la funcion entrega un 0
     //Es necesario pasarle el tamaño de la cadena de texto que llega en el topic, para evitar el ruido
     if (strncmp(event->topic,"downlink/ds/temp_ideal", event->topic_len) == 0)
-    {
-        parametros_temperatura_Blynk->temperatura_ideal = atoi(event->data);
+    {   
+        int tempValue; //Valor temporal para almacenar el dato de sscanf
+        //Usamos sscanf para tomar las 2 primeras letras del dato que llega en el evento. Si llegan más de 2 letras, no las toma
+        sscanf(event->data, "%2d", &tempValue);
+        parametros_temperatura_Blynk->temperatura_ideal = tempValue;
         parametros_temperatura_Blynk->limite_sup_temp = parametros_temperatura_Blynk->temperatura_ideal + 5;
         parametros_temperatura_Blynk->limite_inf_temp = parametros_temperatura_Blynk->temperatura_ideal - 5;
     }
@@ -291,9 +294,9 @@ void recibe_Blynk(esp_mqtt_event_handle_t event)
 //DEMUX
 void envia_Blynk(char *cmd_id, char *data){
     //ds/Switch Value
-    if (strcmp(cmd_id, "test") == 0)
+    if (strcmp(cmd_id, "mensaje_estado") == 0)
     {
-        esp_mqtt_client_publish(client, "ds/EVENTOS_PROCESO", data, 0, 0, 0);
+        esp_mqtt_client_publish(client, "ds/mensaje_estado", data, 0, 0, 0);
     }
     else if(strcmp(cmd_id, "temp") == 0)
     {

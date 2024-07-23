@@ -23,8 +23,8 @@ static const char *MAIN_TAG = "Main";
 // Pin de conexion de One Wire del sensor DS18B20
 #define GPIO_DS18B20_0 (GPIO_NUM_13)
 // Definimos la instruccion para encender el climatizador
-#define CALOR   1
-#define FRIO    0
+#define CALOR   (1)
+#define FRIO    (0)
 
 /*--------------------------------CONTROL HUMEDAD-----------------------------------------------*/
 
@@ -35,10 +35,10 @@ void app_main(void)
 {
     // Nos conectamos a internet y a Blynk.Cloud
     conecta_servidor();
-    // Enviamos a Blynk la solicitud para que sincronice los datos con las variables del sistema
-    envia_Blynk("sync", NULL);
     // Creamos las tareas del sistema
     crea_tareas();
+    // Enviamos a Blynk la solicitud para que sincronice los datos con las variables del sistema
+    envia_Blynk("sync", NULL);
 }
 
 void vTaskMideTemperatura(void *pvParameters)
@@ -47,7 +47,6 @@ void vTaskMideTemperatura(void *pvParameters)
     param_cont_temperatura *parametros_temperatura = (param_cont_temperatura *)malloc(sizeof(param_cont_temperatura));
     // Enviamos al script de Blynk el puntero a la estructura de parametros de temperatura
     apunta_parametros_temperatura(parametros_temperatura);
-
     // Seteamos la resistencia de pull up interna.
     gpio_set_pull_mode(GPIO_DS18B20_0, GPIO_PULLUP_ONLY);
     // Aplicamos un delay de 2 segundos para que el sensor se estabilice
@@ -75,17 +74,19 @@ void vTaskMideTemperatura(void *pvParameters)
         printf("Intervalo superior: %d\n", parametros_temperatura->limite_sup_temp);
         printf("Intervalo inferior: %d\n", parametros_temperatura->limite_inf_temp);
         //Calculamos diferencia de temperatura ideal vs medida
-        parametros_temperatura->diferencia_temp = abs((int8_t)(parametros_temperatura->temperatura) - parametros_temperatura->temperatura_ideal);
+        parametros_temperatura->diferencia_temp = abs(parametros_temperatura->temperatura - parametros_temperatura->temperatura_ideal);
         // Revisamos que la temperatura este dentro del intervalo deseado
         if (parametros_temperatura->temperatura > parametros_temperatura->limite_sup_temp)
-        {
+        {   
+            //Enviamos mensaje de estado a Blynk
+            envia_Blynk("mensaje_estado","Climatizando");
             // Si la temperatura es mayor a la deseada, encendemos el climatizador en calor
             if (!estado_climatizador)
             {
                 // Seteamos el flag en true
                 estado_climatizador = true;
                 // Encendemos el climatizador
-                enciende_climatizador(CALOR);
+                enciende_climatizador(FRIO);
             }
             // Creamos una tarea con freeRTOS para el control del ventilador por PWM
             // Mas adelante cuando identifiquemos que la temperatura vuelve a la normalidad, eliminamos la tarea
@@ -98,14 +99,15 @@ void vTaskMideTemperatura(void *pvParameters)
         }
         else if (parametros_temperatura->temperatura < parametros_temperatura->limite_inf_temp)
         {
-
+            //Enviamos mensaje de estado a Blynk
+            envia_Blynk("mensaje_estado","Climatizando");
             // Si la temperatura es menor a la deseada, encendemos el climatizador en frio
             if (!estado_climatizador)
             {
                 // Seteamos el flag en true
                 estado_climatizador = true;
                 // Encendemos el climatizador
-                enciende_climatizador(FRIO);
+                enciende_climatizador(CALOR);
             }
             // Creamos una tarea con freeRTOS para el control del ventilador por PWM
             // Mas adelante cuando identifiquemos que la temperatura vuelve a la normalidad, eliminamos la tarea
@@ -117,6 +119,8 @@ void vTaskMideTemperatura(void *pvParameters)
         }
         else
         {
+            //Enviamos mensaje de estado a Blynk
+            envia_Blynk("mensaje_estado",NULL);
             // Si la temperatura esta dentro del intervalo deseado, apagamos el climatizador
             if (estado_climatizador)
             {
@@ -131,6 +135,7 @@ void vTaskMideTemperatura(void *pvParameters)
                 estado_ventilador = false;
                 // Terminamos la tarea de control del ventilador
                 vTaskDelete(xVentiladorHandle);
+                apaga_ventilador();
             }
         }
         vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO));

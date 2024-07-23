@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include "Control_temperatura.h"
-#include "freertos/FreeRTOS.h"
-#include "esp_log.h"
 
+//----------------------------------------------------SENSOR TEMPERATURA----------------------------------------------------*
 #define MAX_DEVICES (1) //Definimos maximo de dispositivos one wire de la linea. Como solo tenemos uno, ponemos 1
 //Definimos la resolucion de la medicion del sensor. 12 bits es la mejor resolucion
 #define DS18B20_RESOLUTION (DS18B20_RESOLUTION_12_BIT)
 //Definimos el tiempo de muestreo del sensor DS18B20
 #define PERIODO_MUESTREO (1000)
 #define GPIO_DS18B20_0 (GPIO_NUM_13) //Pin de conexion de One Wire del sensor DS18B20
-
+//-----------------------------------------------------VENTILADOR-----------------------------------------------------------*
+#define GPIO_VENTILADOR (GPIO_NUM_25) //Pin de conexion del ventilador
+//-----------------------------------------------------CLIMATIZADOR---------------------------------------------------------*
+#define GPIO_CLIMATIZADOR_CALOR (GPIO_NUM_26) //Pin de conexion del climatizador
+#define GPIO_CLIMATIZADOR_FRIO (GPIO_NUM_27) //Pin de conexion del climatizador
 static const char *T_SENSOR_TAG = "Sensor DS18B20";
 //Creamos el bus de OneWire, utilizando el driver RMT
 OneWireBus *oneWireBus;
@@ -67,25 +70,69 @@ void mide_temperatura(param_cont_temperatura *parametros){
 }
 
 void enciende_climatizador(bool calor){
+    
     if(calor){
+        gpio_set_direction(GPIO_CLIMATIZADOR_CALOR, GPIO_MODE_OUTPUT);
         ESP_LOGI(T_SENSOR_TAG,"Encendiendo climatizador en modo calor\n");
+        gpio_set_level(GPIO_CLIMATIZADOR_CALOR, 1);
     }else{
+        gpio_set_direction(GPIO_CLIMATIZADOR_FRIO, GPIO_MODE_OUTPUT);
         ESP_LOGI(T_SENSOR_TAG,"Encendiendo climatizador en modo refrigeración\n");
+        gpio_set_level(GPIO_CLIMATIZADOR_FRIO, 1);
     }
 }
 
 void apagar_climatizador(void){
     ESP_LOGI(T_SENSOR_TAG,"Apagando climatizador\n");
+    gpio_set_level(GPIO_CLIMATIZADOR_CALOR, 0);
+    gpio_set_level(GPIO_CLIMATIZADOR_FRIO, 0);
 }
 
 TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
-    while(1){
-        ESP_LOGI(T_SENSOR_TAG,"Controlando ventilador\n");
-        //Printea la diferencia de temperatura
-        printf("Diferencia de temperatura: %d\n", parametros->diferencia_temp);
-        vTaskDelay(pdMS_TO_TICKS(5000));
-    }
     
+    ESP_LOGI(T_SENSOR_TAG,"Controlando ventilador\n");
+    //Configuramos el pin en output
+    gpio_set_direction(GPIO_VENTILADOR, GPIO_MODE_OUTPUT);
+    //Configuramos el timer
+    ledc_timer_config_t timer_conf;
+    timer_conf.duty_resolution = LEDC_TIMER_10_BIT; //Resolucion de 10 bits
+    timer_conf.freq_hz = 20000; //Frecuencia de 5kHz
+    timer_conf.speed_mode = LEDC_LOW_SPEED_MODE; //Modo de baja velocidad
+    timer_conf.timer_num = LEDC_TIMER_0; //Timer 0
+    ledc_timer_config(&timer_conf);
+
+    //Configuramos canal para PWM
+    ledc_channel_config_t ledc_conf;
+    ledc_conf.channel = LEDC_CHANNEL_0; //Canal 0
+    ledc_conf.duty = 0; //Duty en 0
+    ledc_conf.gpio_num = GPIO_VENTILADOR; //Pin de salida
+    ledc_conf.intr_type = LEDC_INTR_DISABLE; //Deshabilitamos interrupciones
+    ledc_conf.speed_mode = LEDC_LOW_SPEED_MODE; //Modo de baja velocidad
+    ledc_conf.timer_sel = LEDC_TIMER_0; //Timer 0
+    ledc_conf.hpoint = 0; //Punto de inicio
+    ledc_channel_config(&ledc_conf);
+    //Definimos la variable duty cycle y configuramos el pin
+    uint32_t dutyC = 0;
+    //gpio_set_direction(GPIO_VENTILADOR, GPIO_MODE_OUTPUT);
+    //Configuramos el bucle de actualizacion del duty cycle
+    while(1){
+        //Calculamos el duty cycle como un proporcional de la diferencia de temperatura
+        //Suponiendo una diferencia de temperatura max de 50 grados, la formula es
+         
+        dutyC= (parametros->diferencia_temp)*1023/50;
+        ledc_set_duty(ledc_conf.speed_mode, ledc_conf.channel, dutyC);
+        ledc_update_duty(ledc_conf.speed_mode, ledc_conf.channel);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+
+    
+    
+}
+
+void apaga_ventilador(void) {
+    ESP_LOGI(T_SENSOR_TAG,"Apagando ventilador\n");
+    ledc_stop(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, 0);
+    gpio_set_level(GPIO_VENTILADOR, 0);
 }
 
 

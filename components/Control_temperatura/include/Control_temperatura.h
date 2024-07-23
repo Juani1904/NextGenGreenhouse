@@ -3,9 +3,12 @@
 //-------------------------------------Control temperatura-------------------------------------
 //Componente donde se almacenan las funciones de sensado de temperatura, acción de ventiladores y de bloque climatizador
 #include <stdint.h>
-#include "owb.h"
-#include "owb_rmt.h"
-#include "ds18b20.h"
+#include "owb.h" //Liberia para configurar OneWire
+#include "owb_rmt.h" //Libreria para configurar OneWire con RMT
+#include "ds18b20.h" //Libreria para configurar el sensor DS18B20
+#include "freertos/FreeRTOS.h" //Libreria para configurar el sistema operativo FreeRTOS
+#include "esp_log.h" //Libreria para configurar los logs
+#include <driver/ledc.h> //Libreria para configurar PWM
 
 /**
  * @brief Parametros de control de temperatura
@@ -53,5 +56,11 @@ void apagar_climatizador(void);
  * @param diferencia_temp Diferencia absoluta entre la temperatura ideal y la temperatura actual
  */
 TaskFunction_t controla_ventilador(param_cont_temperatura *parametros);
+
+/**
+ * @brief Funcion para apagar el ventilador
+ * 
+ */
+void apaga_ventilador(void);
 
 #endif
