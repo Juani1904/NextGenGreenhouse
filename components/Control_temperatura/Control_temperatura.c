@@ -66,5 +66,25 @@ void mide_temperatura(param_cont_temperatura *parametros){
     }
 }
 
+void enciende_climatizador(bool calor){
+    if(calor){
+        ESP_LOGI(T_SENSOR_TAG,"Encendiendo climatizador en modo calor\n");
+    }else{
+        ESP_LOGI(T_SENSOR_TAG,"Encendiendo climatizador en modo refrigeración\n");
+    }
+}
+
+void apagar_climatizador(void){
+    ESP_LOGI(T_SENSOR_TAG,"Apagando climatizador\n");
+}
+
+TaskFunction_t controla_ventilador(void *diferencia_temp){
+    while(1){
+        ESP_LOGI(T_SENSOR_TAG,"Controlando ventilador\n");
+        vTaskDelay(pdMS_TO_TICKS(5000));
+    }
+    
+}
+
 
 

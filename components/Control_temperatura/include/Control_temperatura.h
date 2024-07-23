@@ -15,8 +15,8 @@ typedef struct{
     uint8_t temperatura_ideal;
     uint8_t limite_inf_temp;
     uint8_t limite_sup_temp;
-    uint8_t ventilador;
-    uint8_t climatizador;}param_cont_temperatura;
+    uint8_t diferencia_temp;
+    }param_cont_temperatura;
 
 /**
  * @brief Funcion para comprobar la conexion con el sensor DS18B20
@@ -43,9 +43,15 @@ void mide_temperatura(param_cont_temperatura *parametros);
 void enciende_climatizador(bool calor);
 
 /**
+ * @brief Funcion para apagar el bloque climatizador
+ * 
+ */
+void apagar_climatizador(void);
+
+/**
  * @brief Funcion para controlar el ventilador por PWM
  * @param diferencia_temp Diferencia absoluta entre la temperatura ideal y la temperatura actual
  */
-void controla_ventilador(float diferencia_temp);
+TaskFunction_t controla_ventilador(void *diferencia_temp);
 
 #endif
