@@ -74,8 +74,8 @@ void vTaskMideTemperatura(void *pvParameters)
         printf("Temperatura ideal: %d\n", parametros_temperatura->temperatura_ideal);
         printf("Intervalo superior: %d\n", parametros_temperatura->limite_sup_temp);
         printf("Intervalo inferior: %d\n", parametros_temperatura->limite_inf_temp);
-        //Calculamos diferencia de temperatura
-        parametros_temperatura->diferencia_temp = abs(parametros_temperatura->temperatura - parametros_temperatura->limite_sup_temp);
+        //Calculamos diferencia de temperatura ideal vs medida
+        parametros_temperatura->diferencia_temp = abs((int8_t)(parametros_temperatura->temperatura) - parametros_temperatura->temperatura_ideal);
         // Revisamos que la temperatura este dentro del intervalo deseado
         if (parametros_temperatura->temperatura > parametros_temperatura->limite_sup_temp)
         {
@@ -92,7 +92,7 @@ void vTaskMideTemperatura(void *pvParameters)
             
             if (!estado_ventilador)
             {
-                xTaskCreate(controla_ventilador, "controla_ventilador", STACK_SIZE, NULL, 5, &xVentiladorHandle);
+                xTaskCreate(controla_ventilador, "controla_ventilador", STACK_SIZE, parametros_temperatura, 5, &xVentiladorHandle);
                 estado_ventilador = true;
             }
         }
@@ -111,7 +111,7 @@ void vTaskMideTemperatura(void *pvParameters)
             // Mas adelante cuando identifiquemos que la temperatura vuelve a la normalidad, eliminamos la tarea
             if (!estado_ventilador)
             {
-                xTaskCreate(controla_ventilador, "controla_ventilador", STACK_SIZE, NULL, 5, &xVentiladorHandle);
+                xTaskCreate(controla_ventilador, "controla_ventilador", STACK_SIZE, parametros_temperatura, 5, &xVentiladorHandle);
                 estado_ventilador = true;
             }
         }

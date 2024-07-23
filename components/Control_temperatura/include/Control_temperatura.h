@@ -52,6 +52,6 @@ void apagar_climatizador(void);
  * @brief Funcion para controlar el ventilador por PWM
  * @param diferencia_temp Diferencia absoluta entre la temperatura ideal y la temperatura actual
  */
-TaskFunction_t controla_ventilador(void *diferencia_temp);
+TaskFunction_t controla_ventilador(param_cont_temperatura *parametros);
 
 #endif

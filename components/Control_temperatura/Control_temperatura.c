@@ -78,9 +78,11 @@ void apagar_climatizador(void){
     ESP_LOGI(T_SENSOR_TAG,"Apagando climatizador\n");
 }
 
-TaskFunction_t controla_ventilador(void *diferencia_temp){
+TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
     while(1){
         ESP_LOGI(T_SENSOR_TAG,"Controlando ventilador\n");
+        //Printea la diferencia de temperatura
+        printf("Diferencia de temperatura: %d\n", parametros->diferencia_temp);
         vTaskDelay(pdMS_TO_TICKS(5000));
     }
     
