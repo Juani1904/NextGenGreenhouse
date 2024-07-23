@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "nextgenGreenhouse",
-    "project_version":    "7392a41-dirty",
+    "project_version":    "590cb78-dirty",
     "project_path":       "C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse",
     "idf_path":           "C:/Users/juani/ESP32/v5.2.2/esp-idf",
     "build_dir":          "C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build",

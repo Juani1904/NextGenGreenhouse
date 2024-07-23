@@ -118,11 +118,18 @@ TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
     while(1){
         //Calculamos el duty cycle como un proporcional de la diferencia de temperatura
         //Suponiendo una diferencia de temperatura max de 50 grados, la formula es
-         
-        dutyC= (parametros->diferencia_temp)*1023/50;
+        if (parametros->diferencia_temp < 20)
+        {
+            dutyC= (parametros->diferencia_temp)*1023/20;
+        }
+        else
+        {
+            dutyC = 1023;
+        }
+        
         ledc_set_duty(ledc_conf.speed_mode, ledc_conf.channel, dutyC);
         ledc_update_duty(ledc_conf.speed_mode, ledc_conf.channel);
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(pdMS_TO_TICKS(200));
     }
 
     
