@@ -66,3 +66,4 @@ $<TARGET_FILE:__idf_wifi_provisioning>
 $<TARGET_FILE:__idf_main>
 $<TARGET_FILE:__idf_Control_temperatura>
 $<TARGET_FILE:__idf_Blynk_MQTT_Connect>
+$<TARGET_FILE:__idf_Control_humedad>
