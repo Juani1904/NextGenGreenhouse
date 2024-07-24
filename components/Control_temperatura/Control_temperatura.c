@@ -13,7 +13,7 @@
 //-----------------------------------------------------CLIMATIZADOR---------------------------------------------------------*
 #define GPIO_CLIMATIZADOR_CALOR (GPIO_NUM_26) //Pin de conexion del climatizador
 #define GPIO_CLIMATIZADOR_FRIO (GPIO_NUM_27) //Pin de conexion del climatizador
-static const char *T_SENSOR_TAG = "Sensor DS18B20";
+static const char *T_CONTROL = "Control temperatura"; //Tag para los logs
 //Creamos el bus de OneWire, utilizando el driver RMT
 OneWireBus *oneWireBus;
 owb_rmt_driver_info rtmDriverInfo;
@@ -35,11 +35,11 @@ void comprueba_sensor_temperatura(void){
     if (status == OWB_STATUS_OK)
     {
         owb_string_from_rom_code(codigoRom, codigoRomString, sizeof(codigoRomString));
-        ESP_LOGI(T_SENSOR_TAG,"Sensor conectado. Código: %s\n", codigoRomString);
+        ESP_LOGI(T_CONTROL,"Sensor conectado. Código: %s\n", codigoRomString);
     }
     else
     {
-        ESP_LOGE(T_SENSOR_TAG,"No se encuentra ningún dispositivo. Estado: %d", status);
+        ESP_LOGE(T_CONTROL,"No se encuentra ningún dispositivo. Estado: %d", status);
     }
 }
 
@@ -65,7 +65,7 @@ void mide_temperatura(param_cont_temperatura *parametros){
     error = ds18b20_read_temp(dispositivo, &parametros->temperatura);
     if (error != DS18B20_OK)
     {
-        ESP_LOGE(T_SENSOR_TAG,"Ocurrió un error leyendo la temperatura\n");
+        ESP_LOGE(T_CONTROL,"Ocurrió un error leyendo la temperatura\n");
     }
 }
 
@@ -73,24 +73,24 @@ void enciende_climatizador(bool calor){
     
     if(calor){
         gpio_set_direction(GPIO_CLIMATIZADOR_CALOR, GPIO_MODE_OUTPUT);
-        ESP_LOGI(T_SENSOR_TAG,"Encendiendo climatizador en modo calor\n");
+        ESP_LOGI(T_CONTROL,"Encendiendo climatizador en modo calor\n");
         gpio_set_level(GPIO_CLIMATIZADOR_CALOR, 1);
     }else{
         gpio_set_direction(GPIO_CLIMATIZADOR_FRIO, GPIO_MODE_OUTPUT);
-        ESP_LOGI(T_SENSOR_TAG,"Encendiendo climatizador en modo refrigeración\n");
+        ESP_LOGI(T_CONTROL,"Encendiendo climatizador en modo refrigeración\n");
         gpio_set_level(GPIO_CLIMATIZADOR_FRIO, 1);
     }
 }
 
 void apagar_climatizador(void){
-    ESP_LOGI(T_SENSOR_TAG,"Apagando climatizador\n");
+    ESP_LOGI(T_CONTROL,"Apagando climatizador\n");
     gpio_set_level(GPIO_CLIMATIZADOR_CALOR, 0);
     gpio_set_level(GPIO_CLIMATIZADOR_FRIO, 0);
 }
 
 TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
     
-    ESP_LOGI(T_SENSOR_TAG,"Controlando ventilador\n");
+    ESP_LOGI(T_CONTROL,"Controlando ventilador\n");
     //Configuramos el pin en output
     gpio_set_direction(GPIO_VENTILADOR, GPIO_MODE_OUTPUT);
     //Configuramos el timer
@@ -137,7 +137,7 @@ TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
 }
 
 void apaga_ventilador(void) {
-    ESP_LOGI(T_SENSOR_TAG,"Apagando ventilador\n");
+    ESP_LOGI(T_CONTROL,"Apagando ventilador\n");
     ledc_stop(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, 0);
     gpio_set_level(GPIO_VENTILADOR, 0);
 }

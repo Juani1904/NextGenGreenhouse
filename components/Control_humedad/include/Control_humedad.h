@@ -5,7 +5,10 @@
 //Librerias
 #include <stdio.h>
 #include <stdint.h>
-#include <driver/adc.h>
+#include <driver/adc.h> //Libreria para configurar el ADC y tomar medidas analogicas
+#include "freertos/FreeRTOS.h" //Libreria para configurar el sistema operativo FreeRTOS
+#include "freertos/task.h" //Libreria para configurar las tareas
+#include "esp_log.h" //Libreria para configurar los logs
 
 /**
  * @brief Parametros de control de humedad
@@ -14,6 +17,16 @@ typedef struct{
     uint8_t humedad;
     uint8_t nivel_tanque;
     }param_cont_humedad;
+
+
+/**
+ * @brief Función para inicializar los canales del ADC
+ *
+ * @param parametros Estructura con los parametros de control de humedad
+
+ */
+void adc_pins_init(void);
+
 
 
 /**
