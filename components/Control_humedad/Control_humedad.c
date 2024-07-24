@@ -21,7 +21,9 @@ void mide_humedad(param_cont_humedad *parametros){
     //Tomamos las medidas de humedad
     int16_t humedad_raw = adc1_get_raw(GPIO_HUMEDAD);
     //Convertimos las medidas de humedad a porcentaje
-    parametros->humedad = humedad_raw*100/1023;
+    //Dado que el sensor entrega el valor maximo para un suelo TOTALMENTE SECO y el minimo sumergido en agua entonces la formula sera
+    //Restamos 100 al valor de humedad_raw a modo a ajuste 
+    parametros->humedad = 100-(humedad_raw-100)*100/1023;
 
 }
 

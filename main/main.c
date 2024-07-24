@@ -8,6 +8,7 @@
 #include "esp_log.h" //Libreria para configurar los logs
 
 #include "Control_temperatura.h" //Libreria para configurar el control de temperatura
+#include "Control_humedad.h"     //Libreria para configurar el control de humedad
 
 #include "Blynk_MQTT_Connect.h" //Libreria para configurar la conexion con el servidor Blynk
 
@@ -41,7 +42,7 @@ void app_main(void)
     envia_Blynk("sync", NULL);
 }
 
-void vTaskMideTemperatura(void *pvParameters)
+void vTaskControlTemperatura(void *pvParameters)
 {
     // Reservamos un espacio de memoria e incializamos el puntero parametros_temperatura, que apunta al primer elemento de ese espacio
     param_cont_temperatura *parametros_temperatura = (param_cont_temperatura *)malloc(sizeof(param_cont_temperatura));
@@ -142,14 +143,41 @@ void vTaskMideTemperatura(void *pvParameters)
     }
 }
 
+void vTaskControlHumedad(void *pvParameters)
+{
+    // Reservamos un espacio de memoria e incializamos el puntero parametros_humedad, que apunta al primer elemento de ese espacio
+    param_cont_humedad *parametros_humedad = (param_cont_humedad *)malloc(sizeof(param_cont_humedad));
+    // Enviamos al script de Blynk el puntero a la estructura de parametros de humedad
+    apunta_parametros_humedad(parametros_humedad);
+    // Inicializamos los pines del ADC
+    adc_pins_init();
+    while (1)
+    {
+        // Medimos la humedad
+        mide_humedad(parametros_humedad);
+        // Lo enviamos a Blynk
+        char humedadC[10];
+        sprintf(humedadC, "%d", parametros_humedad->humedad);
+        envia_Blynk("humedad", humedadC);
+        printf("Humedad invernadero: %d\n", parametros_humedad->humedad);
+        vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO));
+    }
+    
+}
+
 esp_err_t crea_tareas(void)
 {
     // Con esta funcion creamos las tareas que se ejecutaran en el sistema, aparte de la tarea principal
 
-    // Creamos la tarea de sensor de temperatura. PRIORIDAD: 3 (Por ahora)
+    // Creamos la tarea de control de temperatura. PRIORIDAD: 3
     static uint8_t parametrosTempTask; // Si quisieramos pasar algun parametro a la tarea
     TaskHandle_t xTempHandle;          // Esta variable apunta a la tarea creada. Nos sirve para modificar la tarea (pausar, eliminar, etc)
-    xTaskCreate(&vTaskMideTemperatura, "mide_temperatura", STACK_SIZE, &parametrosTempTask, 5, &xTempHandle);
+    xTaskCreate(&vTaskControlTemperatura, "control_temperatura", STACK_SIZE, &parametrosTempTask, 3, &xTempHandle);
+
+    //Creamos la tarea de control de humedad. PRIORIDAD: 4
+    static uint8_t parametrosHumedadTask;
+    TaskHandle_t xHumedadHandle;
+    xTaskCreate(&vTaskControlHumedad, "control_humedad", STACK_SIZE, &parametrosHumedadTask, 4, &xHumedadHandle);
 
     // Mas tareas....
 

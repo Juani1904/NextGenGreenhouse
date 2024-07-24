@@ -31,6 +31,7 @@
 #include "passwords.h" //Libreria para configurar todas las credenciales/contraseñas del proyecto
 
 #include "Control_temperatura.h" //Libreria para configurar el control de temperatura
+#include "Control_humedad.h" //Libreria para configurar el control de humedad
 
 //Definimos los tags para los logs
 static const char *MQTT_TAG = "Cliente MQTT";
@@ -100,6 +101,11 @@ static void log_error_if_nonzero(const char *message, int error_code); //Funcion
  */
 void apunta_parametros_temperatura(param_cont_temperatura* parametros);
 
+/**
+ * @brief Función para apuntar a los parámetros de humedad
+ * @param parametros estructura de parámetros de humedad que le pasamos a la función para apuntar a dichas variables con un puntero
+ */
+void apunta_parametros_humedad(param_cont_humedad* parametros);
 
 /**
  * @brief Funcion para enviar datos a Blynk

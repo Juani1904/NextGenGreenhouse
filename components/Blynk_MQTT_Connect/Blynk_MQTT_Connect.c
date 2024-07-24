@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "Blynk_MQTT_Connect.h"
-#include "Control_temperatura.h"
+
 
 /*------------------------------------------------------CONFIGURACIÓN WIFI------------------------------------------------------------ */
 
@@ -21,6 +21,7 @@ esp_mqtt_client_handle_t client;
 /*-----------------------------------------------------Control de temperatura-----------------------------------------*/
 //Declaramos un puntero a la estructura de parametros de control de temperatura
 param_cont_temperatura *parametros_temperatura_Blynk;
+param_cont_humedad *parametros_humedad_Blynk;
 
 
 //-------------------------------------------------MAIN: conecta_servidor------------------------------------------------------------
@@ -272,7 +273,12 @@ static void inicia_cliente_mqtt(void)
  void apunta_parametros_temperatura(param_cont_temperatura* parametros)
 {
     parametros_temperatura_Blynk = parametros;
-}    
+}
+
+void apunta_parametros_humedad(param_cont_humedad* parametros){
+    parametros_humedad_Blynk = parametros;
+}
+
 
 //MUX
 void recibe_Blynk(esp_mqtt_event_handle_t event)
@@ -301,6 +307,11 @@ void envia_Blynk(char *cmd_id, char *data){
     else if(strcmp(cmd_id, "temp") == 0)
     {
         esp_mqtt_client_publish(client, "ds/temp", data, 0, 0, 0);
+
+    }
+    else if(strcmp(cmd_id, "humedad") == 0)
+    {
+        esp_mqtt_client_publish(client, "ds/humedad", data, 0, 0, 0);
 
     }
     else if(strcmp(cmd_id, "sync") == 0){

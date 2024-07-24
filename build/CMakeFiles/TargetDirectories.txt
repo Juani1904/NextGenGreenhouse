@@ -663,13 +663,6 @@ C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/install.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/install/local.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_temperatura/CMakeFiles/install/strip.dir
-C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir
-C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/edit_cache.dir
-C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/rebuild_cache.dir
-C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/list_install_components.dir
-C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install.dir
-C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install/local.dir
-C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install/strip.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_humedad/CMakeFiles/__idf_Control_humedad.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_humedad/CMakeFiles/edit_cache.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_humedad/CMakeFiles/rebuild_cache.dir
@@ -677,3 +670,10 @@ C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_humedad/CMakeFiles/install.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_humedad/CMakeFiles/install/local.dir
 C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Control_humedad/CMakeFiles/install/strip.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/__idf_Blynk_MQTT_Connect.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/edit_cache.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/rebuild_cache.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/list_install_components.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install/local.dir
+C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/esp-idf/Blynk_MQTT_Connect/CMakeFiles/install/strip.dir
