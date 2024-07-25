@@ -48,6 +48,6 @@ void mide_nivel_tanque(param_cont_humedad *parametros){
     //Tomamos las medidas de nivel de agua
     int16_t nivel_tanque_raw = adc1_get_raw(GPIO_NIVEL_TANQUE);
     //Convertimos las medidas de nivel de agua a porcentaje
-    parametros->nivel_tanque = nivel_tanque_raw*100/1023;
+    parametros->nivel_tanque = (nivel_tanque_raw)*40/420+60;
 
 }

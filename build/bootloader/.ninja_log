@@ -1,35 +1,35 @@
 # ninja log v5
 5441	7388	7432888090621304	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/bootloader_sha.c.obj	2fc7e3f67083d713
-14	1480	7432888030774905	project_elf_src_esp32.c	a5c6446305130d7d
 1290	3099	7432888047578186	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/i2c_periph.c.obj	8e8855e753ed6865
+14	1480	7432888030774905	project_elf_src_esp32.c	a5c6446305130d7d
 611	2373	7432888040556539	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/adc_periph.c.obj	4556d39dcd11dc1
 14	1480	7432888030774905	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/project_elf_src_esp32.c	a5c6446305130d7d
 32	1582	7432888033236868	esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/eri.c.obj	a2df084d7c813886
+234	2016	7432888036948371	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/interrupts.c.obj	246a7430e28e4a6b
+70	1709	7432888034399686	esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj	acdd79ea314d63a9
+2923	4672	7432888063952174	esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj	ce794995924ba4d7
 5809	7694	7432888093737919	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_panic.c.obj	b2501f0f64fc6e02
 4571	6554	7432888082337568	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32.c.obj	dc30d74e5a15d2b5
-2923	4672	7432888063952174	esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/efuse_hal.c.obj	ce794995924ba4d7
-70	1709	7432888034399686	esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/xt_trax.c.obj	acdd79ea314d63a9
-234	2016	7432888036948371	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/interrupts.c.obj	246a7430e28e4a6b
-4049	6008	7432888076248539	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/flash_encrypt.c.obj	540fd0bb11921f6f
 126	1821	7432888034624092	esp-idf/soc/CMakeFiles/__idf_soc.dir/lldesc.c.obj	56faacc4b83c2404
 1390	3199	7432888048730781	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/timer_periph.c.obj	bfe2e0cf8be173e1
-4918	6852	7432888087557609	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp_image_format.c.obj	438c8b287583806f
-2104	3855	7432888055325209	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/twai_periph.c.obj	cd21e7b3daa34e62
+4049	6008	7432888076248539	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/flash_encrypt.c.obj	540fd0bb11921f6f
 313	2103	7432888038235462	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/gpio_periph.c.obj	ed7968304b844a9b
-5306	7250	7432888089430224	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_console_loader.c.obj	2055bf890523dc34
+2104	3855	7432888055325209	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/twai_periph.c.obj	cd21e7b3daa34e62
+4918	6852	7432888087557609	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp_image_format.c.obj	438c8b287583806f
 169	1929	7432888035679115	esp-idf/soc/CMakeFiles/__idf_soc.dir/dport_access_common.c.obj	16490791694dbd81
 4450	6445	7432888080824790	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/flash_qio_mode.c.obj	d138ad5593b943f
+5306	7250	7432888089430224	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_console_loader.c.obj	2055bf890523dc34
 409	2188	7432888038898076	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/uart_periph.c.obj	f05ee15e22e42dc9
 506	2279	7432888039671011	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/dport_access.c.obj	631c03da66d50740
-5643	7618	7432888093488668	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/bootloader_esp32.c.obj	4ac10cf5b8018dd6
-1821	3550	7432888052889515	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mpi_periph.c.obj	45cca1c1704fd50d
 729	2483	7432888041666028	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/spi_periph.c.obj	897889f5eed3a12c
+1821	3550	7432888052889515	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/mpi_periph.c.obj	45cca1c1704fd50d
+5643	7618	7432888093488668	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/bootloader_esp32.c.obj	4ac10cf5b8018dd6
 811	2588	7432888042468624	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/ledc_periph.c.obj	2231a2867cac3dd7
 929	2705	7432888043536004	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/pcnt_periph.c.obj	39356eceba4805ab
 4131	6125	7432888076922007	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/secure_boot.c.obj	f203ff476023ecc2
-3855	5809	7432888073745504	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random.c.obj	7d5c76cb8036a60e
-3100	4918	7432888066198206	esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj	e9c9df691ee56605
 1014	2802	7432888044916648	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/rmt_periph.c.obj	c74d0641216b767f
+3100	4918	7432888066198206	esp-idf/hal/CMakeFiles/__idf_hal.dir/mmu_hal.c.obj	e9c9df691ee56605
+3855	5809	7432888073745504	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random.c.obj	7d5c76cb8036a60e
 1106	2922	7432888045313257	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdm_periph.c.obj	edb4b1bf74ce2b17
 1205	3003	7432888046419131	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/i2s_periph.c.obj	b4bf73bcfd41269
 1588	3353	7432888050555541	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/lcd_periph.c.obj	594e8cee04fc82c8
@@ -39,28 +39,28 @@
 2016	3770	7432888054468637	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/touch_sensor_periph.c.obj	b65b4577345b4c26
 2188	3961	7432888056329100	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/dac_periph.c.obj	7ce71b8f28265432
 2279	4049	7432888057913400	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/rtc_io_periph.c.obj	bc8268cd360cfbbe
-3447	5305	7432888070550162	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_common.c.obj	e707db4b19e3aa6a
 2373	4131	7432888059306074	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32/sdio_slave_periph.c.obj	62e17cd2a8c42602
-2588	4347	7432888060416687	esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj	68fcf497a943d9c
+3447	5305	7432888070550162	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_common.c.obj	e707db4b19e3aa6a
 2483	4239	7432888065721687	esp-idf/micro-ecc/CMakeFiles/__idf_micro-ecc.dir/uECC_verify_antifault.c.obj	3261cf46ce73255
+2588	4347	7432888060416687	esp-idf/hal/CMakeFiles/__idf_hal.dir/hal_utils.c.obj	68fcf497a943d9c
 2706	4449	7432888061598679	esp-idf/hal/CMakeFiles/__idf_hal.dir/mpu_hal.c.obj	368c4cbd65ac1fff
-3961	5902	7432888075208548	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_efuse.c.obj	b3a902f21f4dc776
 2802	4570	7432888062910606	esp-idf/hal/CMakeFiles/__idf_hal.dir/efuse_hal.c.obj	a3f599ba5cdcc5f6
+3961	5902	7432888075208548	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_efuse.c.obj	b3a902f21f4dc776
 3003	4792	7432888065005975	esp-idf/hal/CMakeFiles/__idf_hal.dir/wdt_hal_iram.c.obj	3cc940dc33471144
+3199	5005	7432888066870706	esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj	10388c14e9efc1c2
 3771	5643	7432888072817281	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_mem.c.obj	52a6f4bfdc18adae
 4347	6316	7432888080901114	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash.c.obj	a51607e5de0fba8a
-3199	5005	7432888066870706	esp-idf/hal/CMakeFiles/__idf_hal.dir/esp32/cache_hal_esp32.c.obj	10388c14e9efc1c2
 3264	5130	7432888067819414	esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_wrap.c.obj	76e2e34ce3837b50
 3550	5440	7432888071439846	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_common_loader.c.obj	7d8c6b45ec165680
 3353	5214	7432888069066815	esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/esp_bootloader_desc.c.obj	723e6c194d773e70
-6008	7918	7432888095954543	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.obj	44ba5ce117c08f04
 7694	8813	7432888112489715	esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/src/esp_err_to_name.c.obj	1990690202fc27f
 3657	5531	7432888071930967	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_clock_init.c.obj	dcd0773d679b1e64
+6008	7918	7432888095954543	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_fields.c.obj	44ba5ce117c08f04
 4239	6229	7432888078222705	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_random_esp32.c.obj	336490f21a52fb7d
 4793	6750	7432888083237847	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/flash_partitions.c.obj	8b5ad399db8f6abb
 4672	6650	7432888084240022	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_utility.c.obj	349d4dddc9d32327
-5131	7046	7432888086933703	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_clock_loader.c.obj	d46ef2a08765fd68
 5005	6958	7432888086249091	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_init.c.obj	3528f914a02e6223
+5131	7046	7432888086933703	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_clock_loader.c.obj	d46ef2a08765fd68
 5215	7152	7432888088531262	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_console.c.obj	8f58e04fb35b983c
 5532	7502	7432888090763005	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/esp32/bootloader_soc.c.obj	584fce3f5bdeb74
 5903	7781	7432888094883416	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32/esp_efuse_table.c.obj	8e7c3e46a26035f0
@@ -70,8 +70,8 @@
 6445	8307	7432888100736101	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_utility.c.obj	9dbb26e05d50eb84
 6554	8410	7432888101245550	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c.obj	3cd2dc7399576af3
 6650	8496	7432888101832861	esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/esp_err.c.obj	b47f4028f46d0864
-7046	8810	7432888108719333	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk.c.obj	5efad1d377ca77ac
 6751	8598	7432888103108871	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/cpu.c.obj	7024392b8147cc94
+7046	8810	7432888108719333	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk.c.obj	5efad1d377ca77ac
 6853	8681	7432888103421442	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/esp_memory_utils.c.obj	5f26634d57ae39d9
 6958	8810	7432888105131481	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/cpu_region_protect.c.obj	b432f8838cbf1d1a
 7152	8811	7432888108081704	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32/rtc_clk_init.c.obj	994c6f92323d9bca
@@ -85,8 +85,8 @@
 8197	8815	7432888116792758	esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_efuse.c.obj	8d187f6a6fdaf8ed
 8307	8815	7432888117656628	esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_longjmp.S.obj	4bcb5e55cf116d64
 8106	8824	7432888117755680	esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_spiflash.c.obj	ddd04f45e3c99861
-10256	10452	7432888134065003	esp-idf/efuse/libefuse.a	d4074c10f8ee6357
 8410	8972	7432888119218507	esp-idf/log/CMakeFiles/__idf_log.dir/log.c.obj	ff31ca7e9ef458d7
+10256	10452	7432888134065003	esp-idf/efuse/libefuse.a	d4074c10f8ee6357
 8497	9044	7432888119969204	esp-idf/log/CMakeFiles/__idf_log.dir/log_buffers.c.obj	d6f1fa3ff0aed328
 8598	9053	7432888120059397	esp-idf/log/CMakeFiles/__idf_log.dir/log_noos.c.obj	e08c05f202f79207
 8682	9100	7432888120512560	esp-idf/main/CMakeFiles/__idf_main.dir/bootloader_start.c.obj	2886a1feed85f75e
@@ -106,205 +106,17 @@
 12375	13248	7432888161990702	bootloader.elf	2fc27cf46d0cbdee
 13248	14451	7432888174068476	.bin_timestamp	1d298c52e2bece4e
 13248	14451	7432888174068476	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/.bin_timestamp	1d298c52e2bece4e
-30	316	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-30	316	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-43	293	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-43	293	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	314	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	314	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-59	441	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-59	441	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-17	416	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-17	416	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	463	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	463	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	273	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	273	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-24	257	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-24	257	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	140	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	140	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-40	304	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-40	304	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-47	300	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-47	300	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	303	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	303	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-37	349	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-37	349	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-40	337	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-40	337	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-43	506	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-43	506	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-38	190	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-38	190	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-30	269	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-30	269	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	262	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	262	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	301	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	301	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-36	209	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-36	209	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-26	205	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-26	205	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-34	220	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-34	220	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	202	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	202	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	218	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	218	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-49	399	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-49	399	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-31	201	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-31	201	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-47	302	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-47	302	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-47	242	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-47	242	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	149	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	149	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-24	175	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-24	175	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	202	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	202	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	172	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	172	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-17	249	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-17	249	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	154	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	154	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	227	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	227	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	233	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	233	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	236	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	236	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	237	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	237	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-22	245	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-22	245	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-26	236	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-26	236	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-34	171	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-34	171	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-26	238	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-26	238	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	420	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	420	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	453	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	453	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	173	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	173	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	250	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	250	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	183	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	183	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-38	288	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-38	288	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	523	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	523	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-43	457	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-43	457	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-24	409	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-24	409	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-33	265	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-33	265	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-33	426	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-33	426	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-29	215	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-29	215	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-27	200	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-27	200	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-32	217	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-32	217	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-36	282	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-36	282	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-27	208	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-27	208	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	272	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	272	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-32	234	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-32	234	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	171	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	171	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	174	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	174	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	144	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	144	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	176	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	176	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	178	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	178	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	164	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	164	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-36	174	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-36	174	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	139	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	139	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	159	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	159	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	167	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	167	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-17	154	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-17	154	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	180	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	180	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-48	450	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-48	450	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	163	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	163	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	151	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	151	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	150	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	150	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	146	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	146	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	180	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	180	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	158	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	158	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	160	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	160	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	147	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	147	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	306	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-23	306	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	166	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	166	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-50	213	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-50	213	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	179	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	179	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-74	448	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-74	448	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	330	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-25	330	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	323	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-20	323	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-65	340	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-65	340	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	136	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	136	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	139	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	139	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	216	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-19	216	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	319	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-28	319	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-17	247	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-17	247	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	159	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-18	159	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	226	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	226	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	173	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	173	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	228	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	228	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	224	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-21	224	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-27	191	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-27	191	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-26	283	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
-26	283	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+32	191	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+32	191	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+33	244	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+33	244	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+39	391	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+39	391	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+26	287	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+26	287	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+34	341	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+34	341	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+35	287	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+35	287	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+25	266	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e
+25	266	0	C:/Users/juani/OneDrive/Documentos/Programacion/ESP32 Proyects/nextgenGreenhouse/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	dbb0eec903da964e

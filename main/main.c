@@ -39,7 +39,7 @@ void app_main(void)
     // Creamos las tareas del sistema
     crea_tareas();
     // Enviamos a Blynk la solicitud para que sincronice los datos con las variables del sistema
-    envia_Blynk("sync", NULL);
+    //envia_Blynk("sync", NULL);
 }
 
 void vTaskControlTemperatura(void *pvParameters)
@@ -151,6 +151,8 @@ void vTaskControlHumedad(void *pvParameters)
     apunta_parametros_humedad(parametros_humedad);
     // Inicializamos los pines del ADC
     adc_pins_init();
+    //Definimos un booleano de estado para la bomba de agua
+    bool estado_bomba = false;
     while (1)
     {
         // Medimos la humedad
@@ -160,9 +162,43 @@ void vTaskControlHumedad(void *pvParameters)
         sprintf(humedadC, "%d", parametros_humedad->humedad);
         envia_Blynk("humedad", humedadC);
         printf("Humedad invernadero: %d\n", parametros_humedad->humedad);
+
+        // Revisamos la humedad de la tierra, si es menor al 50% debemos accionar el sistema de riego
+        if (parametros_humedad->humedad < 50)
+        {
+            // Enviamos mensaje de estado a Blynk
+            envia_Blynk("mensaje_estado", "Regando");
+            // Revisamos el nivel de agua en el tanque, si es mayor al 60% debemos accionar la bomba de agua, si no mostramos un mensaje
+            mide_nivel_tanque(parametros_humedad);
+            printf("Nivel de agua en el tanque: %d\n", parametros_humedad->nivel_tanque);
+            if (parametros_humedad->nivel_tanque > 60)
+            {
+                // Encendemos la bomba de agua
+                if(!estado_bomba){
+                    estado_bomba = true;
+                    enciende_bomba();
+                }
+    
+            }
+            else
+            {
+                // Enviamos mensaje de estado a Blynk
+                envia_Blynk("mensaje_estado", "Nivel de agua bajo, por favor rellenar");
+                ESP_LOGW(MAIN_TAG,"Nivel de agua en el tanque bajo");
+            }
+        }
+        else
+        {
+            // Enviamos mensaje de estado a Blynk
+            envia_Blynk("mensaje_estado", NULL);
+            // Apagamos la bomba de agua
+            if(estado_bomba){
+                estado_bomba = false;
+                apaga_bomba();
+            }
+        }
         vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO));
     }
-    
 }
 
 esp_err_t crea_tareas(void)
@@ -172,7 +208,7 @@ esp_err_t crea_tareas(void)
     // Creamos la tarea de control de temperatura. PRIORIDAD: 3
     static uint8_t parametrosTempTask; // Si quisieramos pasar algun parametro a la tarea
     TaskHandle_t xTempHandle;          // Esta variable apunta a la tarea creada. Nos sirve para modificar la tarea (pausar, eliminar, etc)
-    xTaskCreate(&vTaskControlTemperatura, "control_temperatura", STACK_SIZE, &parametrosTempTask, 3, &xTempHandle);
+    //xTaskCreate(&vTaskControlTemperatura, "control_temperatura", STACK_SIZE, &parametrosTempTask, 3, &xTempHandle);
 
     //Creamos la tarea de control de humedad. PRIORIDAD: 4
     static uint8_t parametrosHumedadTask;
