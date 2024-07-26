@@ -188,6 +188,8 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         //Los topics de downlink son los topics a los que nos suscribimos para recibir datos de Blynk. Cada topic corresponde a un DATASTREAM (actuador del dashboard de blynk)
 
         MSG_ID = esp_mqtt_client_subscribe(client, "downlink/ds/temp_ideal", 0); //SWITCH
+
+        MSG_ID= esp_mqtt_client_subscribe(client, "downlink/ds/RESET", 0); //RESET
         
         //Se podria colocar un mensaje de subscripcion exitosa, sin embargo en el evento de suscripcion ya se printea un mensaje de suscripcion exitosa
         //ESP_LOGI(MQTT_TAG, "Suscripcion exitosa, MSG_ID= %d", MSG_ID);
@@ -295,6 +297,24 @@ void recibe_Blynk(esp_mqtt_event_handle_t event)
         parametros_temperatura_Blynk->limite_sup_temp = parametros_temperatura_Blynk->temperatura_ideal + 5;
         parametros_temperatura_Blynk->limite_inf_temp = parametros_temperatura_Blynk->temperatura_ideal - 5;
     }
+
+    //Bloque de código para recibir el dato de reseteo del controlador
+    if (strncmp(event->topic,"downlink/ds/RESET", event->topic_len) == 0)
+    {   
+        int resetValue; //Almacenamos el valor de reseteo puede ser 1 o 0
+        sscanf(event->data, "%1d", &resetValue);
+        if(resetValue==1){
+            //Enviamos un 0 al mismo topic para resetear el valor
+            envia_Blynk("RESET","0");
+            //Esperamos 1 segundo para que el mensaje llegue a Blynk
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+            //Liberamos las memorias dinamicas utilizadas
+            free(parametros_temperatura_Blynk);
+            free(parametros_humedad_Blynk);
+            //Reseteamos la esp
+            esp_restart();
+        }
+    }
 }
 
 //DEMUX
@@ -328,7 +348,12 @@ void envia_Blynk(char *cmd_id, char *data){
         }
         
     }
-    
+    else if (strcmp(cmd_id,"RESET") == 0){
+        esp_mqtt_client_publish(client, "ds/RESET", data, 0, 0, 0);
+    }
+    else{
+        ESP_LOGE(MQTT_TAG, "Comando no reconocido");
+    }
     
 }
 
