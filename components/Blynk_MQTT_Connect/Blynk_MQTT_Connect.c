@@ -322,7 +322,7 @@ void envia_Blynk(char *cmd_id, char *data){
     //ds/Switch Value
     if (strcmp(cmd_id, "mensaje_estado") == 0)
     {
-        esp_mqtt_client_publish(client, "ds/mensaje_estado", data, 0, 0, 0);
+        esp_mqtt_client_publish(client, "ds/mensaje_estado", data, 0, 0, 0);        
     }
     else if(strcmp(cmd_id, "temp") == 0)
     {

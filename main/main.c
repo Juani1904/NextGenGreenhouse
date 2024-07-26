@@ -17,6 +17,8 @@
 /*----------------------------------LOGS y TAREAS----------------------------------------*/
 static const char *MAIN_TAG = "Main";
 #define STACK_SIZE 2048 // Definimos el tamaño de la pila de las tareas en bytes
+// Definimos una global Key para implementar un mutex
+SemaphoreHandle_t GlobalKey = NULL;
 
 /*--------------------------------CONTROL TEMPERATURA-----------------------------------------------*/
 // Definimos el tiempo de muestreo del sensor DS18B20
@@ -24,8 +26,8 @@ static const char *MAIN_TAG = "Main";
 // Pin de conexion de One Wire del sensor DS18B20
 #define GPIO_DS18B20_0 (GPIO_NUM_13)
 // Definimos la instruccion para encender el climatizador
-#define CALOR   (1)
-#define FRIO    (0)
+#define CALOR (1)
+#define FRIO (0)
 
 /*--------------------------------CONTROL HUMEDAD-----------------------------------------------*/
 
@@ -38,8 +40,10 @@ void app_main(void)
     conecta_servidor();
     // Creamos las tareas del sistema
     crea_tareas();
+    // Creamos el mutex
+    GlobalKey = xSemaphoreCreateMutex(); // Definimos el mutex
     // Enviamos a Blynk la solicitud para que sincronice los datos con las variables del sistema
-    //envia_Blynk("sync", NULL);
+    envia_Blynk("sync", NULL);
 }
 
 void vTaskControlTemperatura(void *pvParameters)
@@ -74,13 +78,18 @@ void vTaskControlTemperatura(void *pvParameters)
         printf("Temperatura ideal: %d\n", parametros_temperatura->temperatura_ideal);
         printf("Intervalo superior: %d\n", parametros_temperatura->limite_sup_temp);
         printf("Intervalo inferior: %d\n", parametros_temperatura->limite_inf_temp);
-        //Calculamos diferencia de temperatura ideal vs medida
+        // Calculamos diferencia de temperatura ideal vs medida
         parametros_temperatura->diferencia_temp = abs(parametros_temperatura->temperatura - parametros_temperatura->temperatura_ideal);
         // Revisamos que la temperatura este dentro del intervalo deseado
         if (parametros_temperatura->temperatura > parametros_temperatura->limite_sup_temp)
-        {   
-            //Enviamos mensaje de estado a Blynk
-            envia_Blynk("mensaje_estado","Climatizando");
+        {
+            // Enviamos mensaje de estado a Blynk
+            if (xSemaphoreTake(GlobalKey, portMAX_DELAY) == pdTRUE)
+            {
+                envia_Blynk("mensaje_estado", "Climatizando");
+                vTaskDelay(pdMS_TO_TICKS(2000));
+                xSemaphoreGive(GlobalKey);
+            }
             // Si la temperatura es mayor a la deseada, encendemos el climatizador en calor
             if (!estado_climatizador)
             {
@@ -91,7 +100,7 @@ void vTaskControlTemperatura(void *pvParameters)
             }
             // Creamos una tarea con freeRTOS para el control del ventilador por PWM
             // Mas adelante cuando identifiquemos que la temperatura vuelve a la normalidad, eliminamos la tarea
-            
+
             if (!estado_ventilador)
             {
                 xTaskCreate(controla_ventilador, "controla_ventilador", STACK_SIZE, parametros_temperatura, 5, &xVentiladorHandle);
@@ -100,8 +109,13 @@ void vTaskControlTemperatura(void *pvParameters)
         }
         else if (parametros_temperatura->temperatura < parametros_temperatura->limite_inf_temp)
         {
-            //Enviamos mensaje de estado a Blynk
-            envia_Blynk("mensaje_estado","Climatizando");
+            // Enviamos mensaje de estado a Blynk
+            if (xSemaphoreTake(GlobalKey, portMAX_DELAY) == pdTRUE)
+            {
+                envia_Blynk("mensaje_estado", "Climatizando");
+                vTaskDelay(pdMS_TO_TICKS(2000));
+                xSemaphoreGive(GlobalKey);
+            }
             // Si la temperatura es menor a la deseada, encendemos el climatizador en frio
             if (!estado_climatizador)
             {
@@ -120,8 +134,13 @@ void vTaskControlTemperatura(void *pvParameters)
         }
         else
         {
-            //Enviamos mensaje de estado a Blynk
-            envia_Blynk("mensaje_estado",NULL);
+            // Enviamos mensaje de estado a Blynk
+            if (xSemaphoreTake(GlobalKey, portMAX_DELAY) == pdTRUE)
+            {
+                envia_Blynk("mensaje_estado", "Temperatura normal");
+                vTaskDelay(pdMS_TO_TICKS(2000));
+                xSemaphoreGive(GlobalKey);
+            }
             // Si la temperatura esta dentro del intervalo deseado, apagamos el climatizador
             if (estado_climatizador)
             {
@@ -151,7 +170,7 @@ void vTaskControlHumedad(void *pvParameters)
     apunta_parametros_humedad(parametros_humedad);
     // Inicializamos los pines del ADC
     adc_pins_init();
-    //Definimos un booleano de estado para la bomba de agua
+    // Definimos un booleano de estado para la bomba de agua
     bool estado_bomba = false;
     while (1)
     {
@@ -166,33 +185,49 @@ void vTaskControlHumedad(void *pvParameters)
         // Revisamos la humedad de la tierra, si es menor al 50% debemos accionar el sistema de riego
         if (parametros_humedad->humedad < 50)
         {
-            // Enviamos mensaje de estado a Blynk
-            envia_Blynk("mensaje_estado", "Regando");
             // Revisamos el nivel de agua en el tanque, si es mayor al 60% debemos accionar la bomba de agua, si no mostramos un mensaje
             mide_nivel_tanque(parametros_humedad);
             printf("Nivel de agua en el tanque: %d\n", parametros_humedad->nivel_tanque);
             if (parametros_humedad->nivel_tanque > 60)
-            {
+            {   
+                // Enviamos mensaje de estado a Blynk
+                if (xSemaphoreTake(GlobalKey, portMAX_DELAY) == pdTRUE)
+                {
+                    envia_Blynk("mensaje_estado", "Regando");
+                    vTaskDelay(pdMS_TO_TICKS(2000));
+                    xSemaphoreGive(GlobalKey);
+                }
                 // Encendemos la bomba de agua
-                if(!estado_bomba){
+                if (!estado_bomba)
+                {
                     estado_bomba = true;
                     enciende_bomba();
                 }
-    
             }
             else
             {
                 // Enviamos mensaje de estado a Blynk
-                envia_Blynk("mensaje_estado", "Nivel de agua bajo, por favor rellenar");
-                ESP_LOGW(MAIN_TAG,"Nivel de agua en el tanque bajo");
+                if (xSemaphoreTake(GlobalKey, portMAX_DELAY) == pdTRUE)
+                {
+                    envia_Blynk("mensaje_estado", "Nivel de tanque de agua bajo. Por favor rellenar");
+                    vTaskDelay(pdMS_TO_TICKS(2000));
+                    xSemaphoreGive(GlobalKey);
+                }
+                ESP_LOGW(MAIN_TAG, "Nivel de agua en el tanque bajo");
             }
         }
         else
         {
             // Enviamos mensaje de estado a Blynk
-            envia_Blynk("mensaje_estado", NULL);
+            if (xSemaphoreTake(GlobalKey, portMAX_DELAY) == pdTRUE)
+            {
+                envia_Blynk("mensaje_estado", "Humedad normal");
+                vTaskDelay(pdMS_TO_TICKS(2000));
+                xSemaphoreGive(GlobalKey);
+            }
             // Apagamos la bomba de agua
-            if(estado_bomba){
+            if (estado_bomba)
+            {
                 estado_bomba = false;
                 apaga_bomba();
             }
@@ -208,9 +243,9 @@ esp_err_t crea_tareas(void)
     // Creamos la tarea de control de temperatura. PRIORIDAD: 3
     static uint8_t parametrosTempTask; // Si quisieramos pasar algun parametro a la tarea
     TaskHandle_t xTempHandle;          // Esta variable apunta a la tarea creada. Nos sirve para modificar la tarea (pausar, eliminar, etc)
-    //xTaskCreate(&vTaskControlTemperatura, "control_temperatura", STACK_SIZE, &parametrosTempTask, 3, &xTempHandle);
+    xTaskCreate(&vTaskControlTemperatura, "control_temperatura", STACK_SIZE, &parametrosTempTask, 3, &xTempHandle);
 
-    //Creamos la tarea de control de humedad. PRIORIDAD: 4
+    // Creamos la tarea de control de humedad. PRIORIDAD: 4
     static uint8_t parametrosHumedadTask;
     TaskHandle_t xHumedadHandle;
     xTaskCreate(&vTaskControlHumedad, "control_humedad", STACK_SIZE, &parametrosHumedadTask, 4, &xHumedadHandle);
