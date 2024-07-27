@@ -96,7 +96,7 @@ TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
     //Configuramos el timer
     ledc_timer_config_t timer_conf;
     timer_conf.duty_resolution = LEDC_TIMER_10_BIT; //Resolucion de 10 bits
-    timer_conf.freq_hz = 20000; //Frecuencia de 5kHz
+    timer_conf.freq_hz = 5000; //Frecuencia de 20kHz
     timer_conf.speed_mode = LEDC_LOW_SPEED_MODE; //Modo de baja velocidad
     timer_conf.timer_num = LEDC_TIMER_0; //Timer 0
     ledc_timer_config(&timer_conf);
@@ -117,10 +117,9 @@ TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
     //Configuramos el bucle de actualizacion del duty cycle
     while(1){
         //Calculamos el duty cycle como un proporcional de la diferencia de temperatura
-        //Suponiendo una diferencia de temperatura max de 50 grados, la formula es
-        if (parametros->diferencia_temp < 20)
+        if (parametros->diferencia_temp < 10)
         {
-            dutyC= (parametros->diferencia_temp)*1023/20;
+            dutyC= (parametros->diferencia_temp)*1023/10;
         }
         else
         {
