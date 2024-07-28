@@ -175,7 +175,7 @@ void vTaskControlHumedad(void *pvParameters)
     // Enviamos al script de Blynk el puntero a la estructura de parametros de humedad
     apunta_parametros_humedad(parametros_humedad);
     // Inicializamos los pines del ADC
-    adc_pins_init(GPIO_HUMEDAD, GPIO_BOMBA);
+    adc_pins_init(GPIO_HUMEDAD, GPIO_NIVEL_TANQUE);
     // Definimos un booleano de estado para la bomba de agua
     bool estado_bomba = false;
     while (1)
@@ -192,7 +192,7 @@ void vTaskControlHumedad(void *pvParameters)
         if (parametros_humedad->humedad < 50)
         {
             // Revisamos el nivel de agua en el tanque, si es mayor al 60% debemos accionar la bomba de agua, si no mostramos un mensaje
-            mide_nivel_tanque(parametros_humedad,GPIO_HUMEDAD);
+            mide_nivel_tanque(parametros_humedad,GPIO_NIVEL_TANQUE);
             printf("Nivel de agua en el tanque: %d\n", parametros_humedad->nivel_tanque);
             if (parametros_humedad->nivel_tanque > 60)
             {
