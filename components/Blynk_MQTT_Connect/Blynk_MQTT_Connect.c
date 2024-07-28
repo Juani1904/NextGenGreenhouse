@@ -1,111 +1,88 @@
 #include <stdio.h>
 #include "Blynk_MQTT_Connect.h"
 
+/*------------------------------------------------------WIFI------------------------------------------------------------ */
+#define WIFI_CONNECTED_BIT BIT0 // Nos logramos conectar al AP (Punto de acceso/Router)
+#define WIFI_FAIL_BIT BIT1      // No nos logramos conectar al AP (Punto de acceso/Router)
+#define ESP_MAXIMUM_RETRY 10    // Numero maximo de intentos de conexion
 
-/*------------------------------------------------------CONFIGURACIÓN WIFI------------------------------------------------------------ */
-
-static int intentos_conexion = 0; //Numero de intentos de conexion al AP (Punto de acceso/Router)
-
+static int intentos_conexion = 0; // Numero de intentos de conexion al AP (Punto de acceso/Router)
 /* Creamos un event group de FreeRTOS */
-//Un event group es un conjunto de bits que las aplicaciones pueden usar y darles un significado
+// Un event group es un conjunto de bits que las aplicaciones pueden usar y darles un significado
 static EventGroupHandle_t WIFI_EVENT_GROUP;
-//El event group nos habilita multiples bits para cada evento, pero solo nos importan dos eventos:
-#define WIFI_CONNECTED_BIT BIT0 //Nos logramos conectar al AP (Punto de acceso/Router)
-#define WIFI_FAIL_BIT      BIT1 //No nos logramos conectar al AP (Punto de acceso/Router)
+// El event group nos habilita multiples bits para cada evento, pero solo nos importan dos eventos:
 
-/*------------------------------------------------------CONFIGURACIÓN CLIENTE MQTT------------------------------------------------------------ */
+// Tag para logs
+static const char *WIFI_TAG = "Estacion WIFI";
 
-//Definimos la estructura cliente como variable global
+/*------------------------------------------------------CLIENTE MQTT------------------------------------------------------------ */
+
+// Definimos la estructura cliente como variable global
 esp_mqtt_client_handle_t client;
 
+// Tag para logs
+static const char *MQTT_TAG = "Cliente MQTT";
+
 /*-----------------------------------------------------Control de temperatura-----------------------------------------*/
-//Declaramos un puntero a la estructura de parametros de control de temperatura
+
+// Declaramos un puntero a la estructura de parametros de control de temperatura
 param_cont_temperatura *parametros_temperatura_Blynk;
+
+/*-----------------------------------------------------Control de humedad-----------------------------------------*/
+
+// Declaramos un puntero a la estructura de parametros de control de humedad
 param_cont_humedad *parametros_humedad_Blynk;
 
-
-//-------------------------------------------------MAIN: conecta_servidor------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------------------------------------*/
 
 void conecta_servidor(void)
 {
-    //Definimos los logs de la aplicacion MQTT
-    ESP_LOGI(MQTT_TAG, "[APP] Inicio..");
-    ESP_LOGI(MQTT_TAG, "[APP] Memoria libre: %" PRIu32 " bytes", esp_get_free_heap_size());
-    ESP_LOGI(MQTT_TAG, "[APP] Versión IDF: %s", esp_get_idf_version());
+    //Printeamos log de inicio de conexion al servidor
+    ESP_LOGI(MQTT_TAG, "Inicio");
+    ESP_LOGI(MQTT_TAG, "Memoria libre: %" PRIu32 " bytes", esp_get_free_heap_size());
+    ESP_LOGI(MQTT_TAG, "Versión IDF: %s", esp_get_idf_version());
 
-    /* esp_log_level_set("*", ESP_LOG_INFO);
-    esp_log_level_set("mqtt_client", ESP_LOG_VERBOSE);
-    esp_log_level_set("mqtt_example", ESP_LOG_VERBOSE);
-    esp_log_level_set("transport_base", ESP_LOG_VERBOSE);
-    esp_log_level_set("esp-tls", ESP_LOG_VERBOSE);
-    esp_log_level_set("transport", ESP_LOG_VERBOSE);
-    esp_log_level_set("outbox", ESP_LOG_VERBOSE); */
+    // Utilizamos la funcion de la libreria NVS (Non Volatile Storage) que nos permite almacenar datos en la memoria flash
+    // En esta memoria se van a almacenar temporalmente sobre todo la información de los logs, eventos, etc
 
-    //Utilizamos la funcion de la libreria NVS (Non Volatile Storage) que nos permite almacenar datos en la memoria flash
-    //En esta memoria se van a almacenar temporalmente sobre todo la información de los logs, eventos, etc
-
-    //Inicializamos la memoria flash
+    // Inicializamos la memoria flash
     esp_err_t ret = nvs_flash_init();
-    //Si no hay espacio en la memoria flash o hay una nueva version encontrada, borramos la memoria flash
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-      ESP_ERROR_CHECK(nvs_flash_erase());
-      ret = nvs_flash_init();
+
+    // Si no hay espacio en la memoria flash o hay una nueva version encontrada, borramos la memoria flash
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+    {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
     }
-    //Verificamos que el return de la inicializacion de la memoria flash sea correcto (ESP_OK)
-    //ESP_ERROR_CHECK(ret);
-    
-    //Utilizamos ESP-NETIF para crear una capa de abstraction para la aplicación, por encima del stack TCP/IP, para no tener que lidiar con el stack directamente
+
+    // Utilizamos ESP-NETIF para crear una capa de abstraction para la aplicación, por encima del stack TCP/IP, para no tener que lidiar con el stack directamente
     esp_netif_init();
 
-    //Creamos un loop de eventos del tipo "default" para atajar los eventos de la aplicacion (Eventos WIFI y Eventos MQTT)
+    // Creamos un loop de eventos del tipo "default" para atajar los eventos de la aplicacion (Eventos WIFI y Eventos MQTT)
     esp_event_loop_create_default();
 
-
-    //Inicializamos la estacion WIFI
+    // Inicializamos la estacion WIFI
     conecta_wifi();
 
-    //Inicializamos el cliente MQTT
+    // Inicializamos el cliente MQTT
     inicia_cliente_mqtt();
-    
 }
 
-
-static void wifi_event_handler(void* arg, esp_event_base_t event_base,
-                                int32_t event_id, void* event_data)
+static void conecta_wifi(void)
 {
-    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) { //Revisamos si la base del evento es del tipo wifi. Y ademas, si el ide del evento es de tipo WIFI_EVENT_STA_START
-        esp_wifi_connect(); //Si es asi, llamamos a la funcion esp_wifi_connect() para conectar la estacion WIFI al AP (Punto de acceso/Router)
-    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) { //Revisamos si la base del evento es del tipo wifi. Y ademas, si el id del evento es de tipo WIFI_EVENT_STA_DISCONNECTED
-        if (intentos_conexion < ESP_MAXIMUM_RETRY) { //Si es asi, verificamos si el numero de intentos de conexion es menor al maximo de intentos
-            esp_wifi_connect(); //Intentamos conectar tantas veces como indique la variable ESP_MAXIMUM_RETRY
-            intentos_conexion++;
-            ESP_LOGI(WIFI_TAG, "Intento %d de reconexión al punto de acceso",intentos_conexion);
-        } else {
-            xEventGroupSetBits(WIFI_EVENT_GROUP, WIFI_FAIL_BIT); //En caso de no lograr conectarnos, seteamos el bit de fallo del evento group en 1
-        }
-        ESP_LOGI(WIFI_TAG,"Conexión fallida al punto de acceso");
-    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) { //Si el evento es de tipo IP_EVENT y el id del evento es de tipo IP_EVENT_STA_GOT_IP
-        ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data; //Recuperamos la informacion del evento (en este caso la ip asignada) en la variable event
-        ESP_LOGI(WIFI_TAG, "IP asignada " IPSTR, IP2STR(&event->ip_info.ip)); //Printeamos la ip asignada
-        intentos_conexion = 0; //Reseteamos el numero de intentos de conexion
-        xEventGroupSetBits(WIFI_EVENT_GROUP, WIFI_CONNECTED_BIT); //Seteamos el bit de conexion exitosa en 1
-    }
-}
+    WIFI_EVENT_GROUP = xEventGroupCreate(); // Creamos un grupo de eventos para la conexion WIFI
 
-void conecta_wifi(void)
-{
-    WIFI_EVENT_GROUP = xEventGroupCreate(); //Creamos un grupo de eventos para la conexion WIFI
+    esp_netif_create_default_wifi_sta(); // Se crea la estación wifi con netif
 
-    esp_netif_create_default_wifi_sta();  //Funcion encargada de abortar la creacion de la interfaz de red en caso de error
-
-    //Definimos el parametro de configuracion de la estacion WIFI.
-    //Este es un struct que contiene la configuracion de la estacion WIFI
-    //Le pasamos la configuracion por defecto mediante la llamada a la funcion WIFI_INIT_CONFIG_DEFAULT()
+    // Definimos el parametro de configuracion de la estacion WIFI.
+    // Este es un struct que contiene la configuracion de la estacion WIFI
+    // Le pasamos la configuracion por defecto mediante la llamada a la funcion WIFI_INIT_CONFIG_DEFAULT()
     wifi_init_config_t config_wifi_inicio = WIFI_INIT_CONFIG_DEFAULT();
-    
-    //Llamamos a la funcion esp_wifi_init() para inicializar el modulo WIFI, pasandole como parametro la direccion de mem de la variable de config
+
+    // Llamamos a la funcion esp_wifi_init() para inicializar el modulo WIFI, pasandole como parametro la direccion de mem de la variable de config
     esp_wifi_init(&config_wifi_inicio);
 
+    //Configuramos el llamado al handler de eventos de WIFI
     esp_event_handler_instance_t instance_any_id;
     esp_event_handler_instance_t instance_got_ip;
     esp_event_handler_instance_register(WIFI_EVENT,
@@ -113,141 +90,52 @@ void conecta_wifi(void)
                                         &wifi_event_handler,
                                         NULL,
                                         &instance_any_id);
-   esp_event_handler_instance_register(IP_EVENT,
+    esp_event_handler_instance_register(IP_EVENT,
                                         IP_EVENT_STA_GOT_IP,
                                         &wifi_event_handler,
                                         NULL,
                                         &instance_got_ip);
 
+    // Configuramos la estacion WIFI
     wifi_config_t config_wifi = {
         .sta = {
-            .ssid = WIFI_SSID, //Usuario WIFI
-            .password = WIFI_PASS, //Contraseña WIFI
-
-            //NOTA
-            /* El umbral de autenticación (authmode) se restablece a WPA2 de forma predeterminada si la contraseña cumple con los estándares de WPA2 (longitud de contraseña => 8).
-             * Si desea conectar el dispositivo a redes WEP/WPA obsoletas, configure el valor del umbral
-             * en WIFI_AUTH_WEP/WIFI_AUTH_WPA_PSK y establezca la contraseña con una longitud y formato que cumpla con los estándares
-             * de WIFI_AUTH_WEP/WIFI_AUTH_WPA_PSK.
-             */
-            .threshold.authmode = ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD,
-            .sae_pwe_h2e = ESP_WIFI_SAE_MODE,
-            .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER,
+            .ssid = WIFI_SSID,     // Usuario WIFI
+            .password = WIFI_PASS, // Contraseña WIFI
+            .threshold.authmode = WIFI_AUTH_WPA2_PSK, // Modo de autenticacion WPA2
+            .sae_pwe_h2e = WPA3_SAE_PWE_BOTH, //Param configuracion seguridad WPA3 SAE
+            .sae_h2e_identifier = "", //Este parametro debe ser siempre un string vacio
         },
     };
-    esp_wifi_set_mode(WIFI_MODE_STA); //Establecemos el modo de la estacion WIFI. Esto para conectarnos A UN PUNTO DE ACCESO, NO CREAR UNO
-    esp_wifi_set_config(WIFI_IF_STA, &config_wifi); //Establecemos la configuracion de la estacion WIFI
-    esp_wifi_start(); //Iniciamos el modulo WIFI
+    esp_wifi_set_mode(WIFI_MODE_STA);               // Establecemos el modo de la estacion WIFI. Esto para conectarnos A UN PUNTO DE ACCESO, NO CREAR UNO
+    esp_wifi_set_config(WIFI_IF_STA, &config_wifi); // Establecemos la configuracion de la estacion WIFI
+    esp_wifi_start();                               // Iniciamos el modulo WIFI
 
     ESP_LOGI(WIFI_TAG, "Establecimiento de estación WIFI finalizado");
 
-    //Definimos la variable bits_estado_wifi, en la cual se almacenan los bits de estado de la conexion WIFI
-    //Con la funcion xEventGroupWaitBits() esperamos a que se conecte al AP (Punto de acceso/Router) y ver cual es el resultado
-    //Si en el wifi_event_handler la conexion fue exitosa, salta el flag de conexion exitosa (WIFI_CONNECTED_BIT)
-    //Si en el wifi_event_handler la conexion fue fallida, salta el flag de conexion fallida (WIFI_FAIL_BIT)
+    // Definimos la variable bits_estado_wifi, en la cual se almacenan los bits de estado de la conexion WIFI
+    // Con la funcion xEventGroupWaitBits() esperamos a que se conecte al AP (Punto de acceso/Router) y ver cual es el resultado
+    // Si en el wifi_event_handler la conexion fue exitosa, salta el flag de conexion exitosa (WIFI_CONNECTED_BIT)
+    // Si en el wifi_event_handler la conexion fue fallida, salta el flag de conexion fallida (WIFI_FAIL_BIT)
     EventBits_t bits_estado_wifi = xEventGroupWaitBits(WIFI_EVENT_GROUP,
-            WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
-            pdFALSE,
-            pdFALSE,
-            portMAX_DELAY);
+                                                       WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
+                                                       pdFALSE,
+                                                       pdFALSE,
+                                                       portMAX_DELAY);
 
-    
-    //Analizamos los bits de estado de la conexion WIFI y printeamos el resultado
-    if (bits_estado_wifi & WIFI_CONNECTED_BIT) {
+    // Analizamos los bits de estado de la conexion WIFI y print    eamos el resultado
+    if (bits_estado_wifi & WIFI_CONNECTED_BIT)
+    {
         ESP_LOGI(WIFI_TAG, "Conectado al punto de acceso SSID: %s Pass: %s",
                  WIFI_SSID, WIFI_PASS);
-    } else if (bits_estado_wifi & WIFI_FAIL_BIT) {
+    }
+    else if (bits_estado_wifi & WIFI_FAIL_BIT)
+    {
         ESP_LOGI(WIFI_TAG, "Fallo al conectar al SSID: %s, password: %s",
                  WIFI_SSID, WIFI_PASS);
-    } else {
+    }
+    else
+    {
         ESP_LOGE(WIFI_TAG, "EVENTO INESPERADO");
-    }
-}
-
-
-
-//Event handler de los eventos MQTT
-//El event loop automaticamente le pasa como parametros la base de los evetos, el id del evento y los datos del evento
-static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
-{
-    ESP_LOGD(MQTT_TAG, "Evento proveniente de event loop Base=%s, Event ID=%" PRIi32 "", base, event_id);
-    //Almacenamos los datos del evento en la variable event
-    //Esta es un struct que contiene toda la informacion del evento. Los que nos interesan son el topic, el dato y el tamaño de ambos
-    esp_mqtt_event_handle_t event = event_data; 
-    esp_mqtt_client_handle_t client = event->client; //Cliente MQTT
-    int MSG_ID;
-
-    //Creamos un switch para manejar el comportamiento segun los diferentes eventos
-    switch ((esp_mqtt_event_id_t)event_id) {
-
-    case MQTT_EVENT_CONNECTED: //Evento de conexión inicial
-        ESP_LOGI(MQTT_TAG, "MQTT_EVENT_CONNECTED");
-
-        //Nos suscribimos a los topics que nos interesan
-        /*-------------------------------------------------------DOWNLINK TOPICS-------------------------------------------------------- */
-        //Los topics de downlink son los topics a los que nos suscribimos para recibir datos de Blynk. Cada topic corresponde a un DATASTREAM (actuador del dashboard de blynk)
-
-        MSG_ID = esp_mqtt_client_subscribe(client, "downlink/ds/temp_ideal", 0); //SWITCH
-
-        MSG_ID= esp_mqtt_client_subscribe(client, "downlink/ds/RESET", 0); //RESET
-        
-        //Se podria colocar un mensaje de subscripcion exitosa, sin embargo en el evento de suscripcion ya se printea un mensaje de suscripcion exitosa
-        //ESP_LOGI(MQTT_TAG, "Suscripcion exitosa, MSG_ID= %d", MSG_ID);
-        /* Dejo comentado el ejemplo de como desuscribirse de un topic
-        msg_id = esp_mqtt_client_unsubscribe(client, "/topic/qos1");
-        ESP_LOGI(TAG, "Desubscripcion exitosa, msg_id=%d", msg_id); */
-        break;
-
-    case MQTT_EVENT_DISCONNECTED: //Evento de desconexión
-        ESP_LOGI(MQTT_TAG, "MQTT_EVENT_DISCONNECTED");
-        break;
-
-    case MQTT_EVENT_SUBSCRIBED: //Evento de suscripción
-        ESP_LOGI(MQTT_TAG, "MQTT_EVENT_SUBSCRIBED, MSG_ID= %d", event->msg_id);
-        MSG_ID = esp_mqtt_client_publish(client, "/topic/qos0", "data", 0, 0, 0);
-        ESP_LOGI(MQTT_TAG, "Subscripción exitosa, MSG_ID= %d", MSG_ID);
-        break;
-
-    case MQTT_EVENT_UNSUBSCRIBED: //Evento de desuscripción
-        ESP_LOGI(MQTT_TAG, "MQTT_EVENT_UNSUBSCRIBED, MSG_ID= %d", event->msg_id);
-        break;
-
-    case MQTT_EVENT_PUBLISHED:  //Evento de publicación
-        ESP_LOGI(MQTT_TAG, "MQTT_EVENT_PUBLISHED, MSG_ID= %d", event->msg_id);
-        break;
-
-    case MQTT_EVENT_DATA: //Evento de recepción de datos. Este es el evento que más nos interesa aparte del de inicio de conexión
-        ESP_LOGI(MQTT_TAG, "MQTT_EVENT_DATA");
-        //Printeamos el topic y el dato que llega en el evento. Esto para probar, luego se comentará
-        printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
-        printf("DATA=%.*s\r\n", event->data_len, event->data);
-        //Llamamos a la funcion recibe_Blynk para procesar el dato que llega en el evento y enviarlo al actuador fisico correspondiente
-        recibe_Blynk(event);
-        break;
-
-    case MQTT_EVENT_ERROR: //Evento de error
-        ESP_LOGI(MQTT_TAG, "MQTT_EVENT_ERROR");
-        //Printeamos el error que llega en el evento
-        if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
-            log_error_if_nonzero("reported from esp-tls", event->error_handle->esp_tls_last_esp_err); //Tipo de Error 1
-            log_error_if_nonzero("reported from tls stack", event->error_handle->esp_tls_stack_err); //Tipo de Error 2
-            log_error_if_nonzero("captured as transport's socket errno",  event->error_handle->esp_transport_sock_errno); //Tipo de Error 3
-            ESP_LOGI(MQTT_TAG, "Last errno string (%s)", strerror(event->error_handle->esp_transport_sock_errno)); //Tipo de Error 4
-        }
-        break;
-        
-    default:
-        ESP_LOGI(MQTT_TAG, "Other event id:%d", event->event_id);
-        break;
-    }
-}
-
-//Funcion para loggear errores
-//Si el codigo de error es distinto de 0 (es decir, existe error) se printea el mensaje de error
-static void log_error_if_nonzero(const char *message, int error_code)
-{
-    if (error_code != 0) {
-        ESP_LOGE(MQTT_TAG, "Last error %s: 0x%x", message, error_code);
     }
 }
 
@@ -255,107 +143,218 @@ static void inicia_cliente_mqtt(void)
 {
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = "mqtt://ny3.blynk.cloud:1883",
-        .credentials.authentication.password= BLYNK_AUTH_TOKEN,
-        .credentials.username= BLYNK_USERNAME,
-        .credentials.client_id= BLYNK_USERNAME,
+        .credentials.authentication.password = BLYNK_AUTH_TOKEN,
+        .credentials.username = BLYNK_USERNAME,
+        .credentials.client_id = BLYNK_USERNAME,
         .session.keepalive = 45,
-        .session.disable_clean_session = false
-    };
-
+        .session.disable_clean_session = false};
 
     client = esp_mqtt_client_init(&mqtt_cfg);
-    /* The last argument may be used to pass data to the event handler, in this example mqtt_event_handler */
+    
+    // Configuramos el llamado al handler de eventos MQTT
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
 }
 
-
-//Creamos una funcion que al pasarle un parametro parametros_temperatura_Blynk apunte a la estructura de parametros de temperatura
-//Esto nos permite manipular desde este script los datos de temperatura. Esto es util a la hora de modificar parámetros DESDE Blynk al micro
- void apunta_parametros_temperatura(param_cont_temperatura* parametros)
+void apunta_parametros_temperatura(param_cont_temperatura *parametros)
 {
     parametros_temperatura_Blynk = parametros;
 }
 
-void apunta_parametros_humedad(param_cont_humedad* parametros){
+void apunta_parametros_humedad(param_cont_humedad *parametros)
+{
     parametros_humedad_Blynk = parametros;
 }
 
-
-//MUX
 void recibe_Blynk(esp_mqtt_event_handle_t event)
 {
-    //Usamos la funcion strcmp para comparar la cadena de texto que llega en el topic con un string
-    //Si ambos son iguales la funcion entrega un 0
-    //Es necesario pasarle el tamaño de la cadena de texto que llega en el topic, para evitar el ruido
-    if (strncmp(event->topic,"downlink/ds/temp_ideal", event->topic_len) == 0)
-    {   
-        int tempValue; //Valor temporal para almacenar el dato de sscanf
-        //Usamos sscanf para tomar las 2 primeras letras del dato que llega en el evento. Si llegan más de 2 letras, no las toma
+    // Usamos la funcion strcmp para comparar la cadena de texto que llega en el topic con un string
+    // Si ambos son iguales la funcion entrega un 0
+    // Es necesario pasarle el tamaño de la cadena de texto que llega en el topic, para evitar el ruido
+    if (strncmp(event->topic, "downlink/ds/temp_ideal", event->topic_len) == 0)
+    {
+        int tempValue; // Valor temporal para almacenar el dato de sscanf
+        // Usamos sscanf para tomar las 2 primeras letras del dato que llega en el evento. Si llegan más de 2 letras, no las toma
         sscanf(event->data, "%2d", &tempValue);
         parametros_temperatura_Blynk->temperatura_ideal = tempValue;
         parametros_temperatura_Blynk->limite_sup_temp = parametros_temperatura_Blynk->temperatura_ideal + 5;
         parametros_temperatura_Blynk->limite_inf_temp = parametros_temperatura_Blynk->temperatura_ideal - 5;
     }
 
-    //Bloque de código para recibir el dato de reseteo del controlador
-    if (strncmp(event->topic,"downlink/ds/RESET", event->topic_len) == 0)
-    {   
-        int resetValue; //Almacenamos el valor de reseteo puede ser 1 o 0
+    // Bloque de código para recibir el dato de reseteo del controlador
+    if (strncmp(event->topic, "downlink/ds/RESET", event->topic_len) == 0)
+    {
+        int resetValue; // Almacenamos el valor de reseteo puede ser 1 o 0
         sscanf(event->data, "%1d", &resetValue);
-        if(resetValue==1){
-            //Enviamos un 0 al mismo topic para resetear el valor
-            envia_Blynk("RESET","0");
-            //Esperamos 1 segundo para que el mensaje llegue a Blynk
+        if (resetValue == 1)
+        {
+            // Enviamos un 0 al mismo topic para resetear el valor
+            envia_Blynk("RESET", "0");
+            // Esperamos 1 segundo para que el mensaje llegue a Blynk
             vTaskDelay(1000 / portTICK_PERIOD_MS);
-            //Liberamos las memorias dinamicas utilizadas
+            // Liberamos las memorias dinamicas utilizadas
             free(parametros_temperatura_Blynk);
             free(parametros_humedad_Blynk);
-            //Reseteamos la esp
+            // Reseteamos la esp
             esp_restart();
         }
     }
 }
 
-//DEMUX
-void envia_Blynk(char *cmd_id, char *data){
-    //ds/Switch Value
+void envia_Blynk(char *cmd_id, char *data)
+{
+    // MENSAJES DE ESTADO
     if (strcmp(cmd_id, "mensaje_estado") == 0)
     {
-        esp_mqtt_client_publish(client, "ds/mensaje_estado", data, 0, 0, 0);        
+        esp_mqtt_client_publish(client, "ds/mensaje_estado", data, 0, 0, 0);
     }
-    else if(strcmp(cmd_id, "temp") == 0)
+    // TEMPERATURA MEDIDA
+    else if (strcmp(cmd_id, "temp") == 0)
     {
         esp_mqtt_client_publish(client, "ds/temp", data, 0, 0, 0);
-
     }
-    else if(strcmp(cmd_id, "humedad") == 0)
+    // HUMEDAD MEDIDA
+        else if (strcmp(cmd_id, "humedad") == 0)
     {
         esp_mqtt_client_publish(client, "ds/humedad", data, 0, 0, 0);
-
     }
-    else if(strcmp(cmd_id, "sync") == 0){
-        //Como nos interesa saber el estado de la sincronización, usamos un QoS=1 y revisamos el return de la función
+    // PETICIÓN DE SINCRONIZACIÓN DE DATOS
+    else if (strcmp(cmd_id, "sync") == 0)
+    {
+        // Como nos interesa saber el estado de la sincronización, usamos un QoS=1 y revisamos el return de la función
         int8_t msg_id;
-        int8_t QoS=1;
-        msg_id=esp_mqtt_client_publish(client, "get/ds/all", NULL, 0, QoS, 0);
-        //Revisamos que la sincronización sea exitosa
-        if(msg_id==-1){
+        int8_t QoS = 1;
+        msg_id = esp_mqtt_client_publish(client, "get/ds/all", NULL, 0, QoS, 0);
+        // Revisamos que la sincronización sea exitosa
+        if (msg_id == -1)
+        {
             ESP_LOGI(MQTT_TAG, "Error en la sincronización");
         }
-        else{
+        else
+        {
             ESP_LOGI(MQTT_TAG, "Sincronización exitosa");
         }
-        
     }
-    else if (strcmp(cmd_id,"RESET") == 0){
+    else if (strcmp(cmd_id, "RESET") == 0)
+    {
         esp_mqtt_client_publish(client, "ds/RESET", data, 0, 0, 0);
     }
-    else{
+    else
+    {
         ESP_LOGE(MQTT_TAG, "Comando no reconocido");
     }
-    
 }
+
+static void print_error(const char *mensaje, int codigo_error)
+{
+    // Funcion para loggear errores
+    // Si el codigo de error es distinto de 0 (es decir, existe error) se printea el mensaje de error
+    if (codigo_error != 0)
+    {
+        ESP_LOGE(MQTT_TAG, "Last error %s: 0x%x", mensaje, codigo_error);
+    }
+}
+
+/*-----------------------------------------------EVENTS HANDLERS----------------------------------------------------------*/
+
+static void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data)
+{
+    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START)
+    {                       // Revisamos si la base del evento es del tipo wifi. Y ademas, si el ide del evento es de tipo WIFI_EVENT_STA_START
+        esp_wifi_connect(); // Si es asi, llamamos a la funcion esp_wifi_connect() para conectar la estacion WIFI al AP (Punto de acceso/Router)
+    }
+    else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED)
+    { // Revisamos si la base del evento es del tipo wifi. Y ademas, si el id del evento es de tipo WIFI_EVENT_STA_DISCONNECTED
+        if (intentos_conexion < ESP_MAXIMUM_RETRY)
+        {                       // Si es asi, verificamos si el numero de intentos de conexion es menor al maximo de intentos
+            esp_wifi_connect(); // Intentamos conectar tantas veces como indique la variable ESP_MAXIMUM_RETRY
+            intentos_conexion++;
+            ESP_LOGI(WIFI_TAG, "Intento %d de reconexión al punto de acceso", intentos_conexion);
+        }
+        else
+        {
+            xEventGroupSetBits(WIFI_EVENT_GROUP, WIFI_FAIL_BIT); // En caso de no lograr conectarnos, seteamos el bit de fallo del evento group en 1
+        }
+        ESP_LOGI(WIFI_TAG, "Conexión fallida al punto de acceso");
+    }
+    else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP)
+    {                                                                         // Si el evento es de tipo IP_EVENT y el id del evento es de tipo IP_EVENT_STA_GOT_IP
+        ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;           // Recuperamos la informacion del evento (en este caso la ip asignada) en la variable event
+        ESP_LOGI(WIFI_TAG, "IP asignada " IPSTR, IP2STR(&event->ip_info.ip)); // Printeamos la ip asignada
+        intentos_conexion = 0;                                                // Reseteamos el numero de intentos de conexion
+        xEventGroupSetBits(WIFI_EVENT_GROUP, WIFI_CONNECTED_BIT);             // Seteamos el bit de conexion exitosa en 1
+    }
+}
+
+
+static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
+{
+    ESP_LOGD(MQTT_TAG, "Evento proveniente de event loop Base=%s, Event ID=%" PRIi32 "", base, event_id);
+    // Almacenamos los datos del evento en la variable event
+    // Esta es un struct que contiene toda la informacion del evento. Los que nos interesan son el topic, el dato y el tamaño de ambos
+    esp_mqtt_event_handle_t event = event_data;
+    esp_mqtt_client_handle_t client = event->client; // Cliente MQTT
+    int MSG_ID=0;
+
+    // Creamos un switch para manejar el comportamiento segun los diferentes eventos
+    switch ((esp_mqtt_event_id_t)event_id)
+    {
+
+        case MQTT_EVENT_CONNECTED: // Evento de conexión inicial
+            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_CONNECTED");
+            // Nos suscribimos a los topics que nos interesan
+            /*-------------------------------------------------------DOWNLINK TOPICS-------------------------------------------------------- */
+            // Los topics de downlink son los topics a los que nos suscribimos para recibir datos de Blynk. Cada topic corresponde a un DATASTREAM (actuador del dashboard de blynk)
+            MSG_ID = esp_mqtt_client_subscribe(client, "downlink/ds/temp_ideal", 0); // TEMPERATURA IDEAL
+            MSG_ID = esp_mqtt_client_subscribe(client, "downlink/ds/RESET", 0); // RESET
+            break;
+
+        case MQTT_EVENT_DISCONNECTED: // Evento de desconexión
+            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_DISCONNECTED");
+            break;
+
+        case MQTT_EVENT_SUBSCRIBED: // Evento de suscripción
+            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_SUBSCRIBED, MSG_ID= %d", event->msg_id);
+            ESP_LOGI(MQTT_TAG, "Subscripción exitosa, MSG_ID= %d", MSG_ID);
+            break;
+
+        case MQTT_EVENT_UNSUBSCRIBED: // Evento de desuscripción
+            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_UNSUBSCRIBED, MSG_ID= %d", event->msg_id);
+            break;
+
+        case MQTT_EVENT_PUBLISHED: // Evento de publicación
+            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_PUBLISHED, MSG_ID= %d", event->msg_id);
+            break;
+
+        case MQTT_EVENT_DATA: // Evento de recepción de datos.
+            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_DATA");
+            // Dejamos comentado el printeo de los datos que llegan en el evento para debuggear
+            //printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
+            //printf("DATA=%.*s\r\n", event->data_len, event->data);
+            // Llamamos a la funcion recibe_Blynk para procesar el dato que llega en el evento y enviarlo al actuador fisico correspondiente
+            recibe_Blynk(event);
+            break;
+
+        case MQTT_EVENT_ERROR: // Evento de error
+            ESP_LOGI(MQTT_TAG, "MQTT_EVENT_ERROR");
+            // Printeamos el error que llega en el evento
+            if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT)
+            {
+                print_error("Reported from esp-tls", event->error_handle->esp_tls_last_esp_err);                    // Tipo de Error 1
+                print_error("Reported from tls stack", event->error_handle->esp_tls_stack_err);                     // Tipo de Error 2
+                print_error("Captured as transport's socket errno", event->error_handle->esp_transport_sock_errno); // Tipo de Error 3
+                ESP_LOGI(MQTT_TAG, "Last errno string (%s)", strerror(event->error_handle->esp_transport_sock_errno));       // Tipo de Error 4
+            }
+            break;
+
+        default:
+            ESP_LOGI(MQTT_TAG, "Otros eventos MQTT: %d", event->event_id);
+            break;
+    }
+}
+
+
+
 
 
 

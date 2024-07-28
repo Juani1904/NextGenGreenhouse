@@ -1,16 +1,11 @@
-/*Incluimos las librerias necesarias para el funcionamiento de nuestro script*/
-
-#include <stdio.h>             //Sirve para la entrada y salida de datos
-#include <stdint.h>            //Sirve para definir tipos de datos
-#include "freertos/FreeRTOS.h" //Libreria para configurar el sistema operativo FreeRTOS
-#include "freertos/task.h"     //Libreria para configurar las tareas
-
-#include "esp_log.h" //Libreria para configurar los logs
-
+#include <stdio.h>               //Sirve para la entrada y salida de datos
+#include <stdint.h>              //Sirve para definir tipos de datos
+#include "freertos/FreeRTOS.h"   //Libreria para configurar el sistema operativo FreeRTOS
+#include "freertos/task.h"       //Libreria para configurar las tareas
+#include "esp_log.h"             //Libreria para configurar los logs
 #include "Control_temperatura.h" //Libreria para configurar el control de temperatura
 #include "Control_humedad.h"     //Libreria para configurar el control de humedad
-
-#include "Blynk_MQTT_Connect.h" //Libreria para configurar la conexion con el servidor Blynk
+#include "Blynk_MQTT_Connect.h"  //Libreria para configurar la conexion con el servidor Blynk
 
 // Definimos algunos parametros que se utilizaran en este script
 
@@ -22,14 +17,25 @@ SemaphoreHandle_t GlobalKey = NULL;
 
 /*--------------------------------CONTROL TEMPERATURA-----------------------------------------------*/
 // Definimos el tiempo de muestreo del sensor DS18B20
-#define PERIODO_MUESTREO (1000)
+#define PERIODO_MUESTREO_TEMPERATURA (1000)
 // Pin de conexion de One Wire del sensor DS18B20
-#define GPIO_DS18B20_0 (GPIO_NUM_13)
+#define GPIO_TEMPERATURA (GPIO_NUM_13)
 // Definimos la instruccion para encender el climatizador
 #define CALOR (1)
 #define FRIO (0)
-
+//Definimos de conexion del climatizador
+#define GPIO_CLIMATIZADOR_CALOR (GPIO_NUM_26)
+//Definimos pin de conexion del climatizador
+#define GPIO_CLIMATIZADOR_FRIO (GPIO_NUM_27)
 /*--------------------------------CONTROL HUMEDAD-----------------------------------------------*/
+#define PERIODO_MUESTREO_HUMEDAD (1000)
+//Pin de conexion del sensor de humedad. GPIO 34 (Input only)
+#define GPIO_HUMEDAD (ADC1_CHANNEL_6)
+//Pin de conexion del sensor de nivel de agua. GPIO 35 (Input only)
+#define GPIO_NIVEL_TANQUE (ADC1_CHANNEL_7)
+//Pin de conexion de la bomba de agua. GPIO 32
+#define GPIO_BOMBA (GPIO_NUM_32) 
+
 
 // Declaramos las funciones que se utilizaran en este script
 esp_err_t crea_tareas(void);
@@ -53,11 +59,11 @@ void vTaskControlTemperatura(void *pvParameters)
     // Enviamos al script de Blynk el puntero a la estructura de parametros de temperatura
     apunta_parametros_temperatura(parametros_temperatura);
     // Seteamos la resistencia de pull up interna.
-    gpio_set_pull_mode(GPIO_DS18B20_0, GPIO_PULLUP_ONLY);
+    gpio_set_pull_mode(GPIO_TEMPERATURA, GPIO_PULLUP_ONLY);
     // Aplicamos un delay de 2 segundos para que el sensor se estabilice
     vTaskDelay(pdMS_TO_TICKS(2000));
     // Comprobamos la conexion con el sensor
-    comprueba_sensor_temperatura();
+    comprueba_sensor_temperatura(GPIO_TEMPERATURA);
     // Iniciamos el sensor
     inicia_sensor_temperatura();
     // Definimos un flag para indicar cuando el bloque climatizador se encuentre encendido o apagado
@@ -96,7 +102,7 @@ void vTaskControlTemperatura(void *pvParameters)
                 // Seteamos el flag en true
                 estado_climatizador = true;
                 // Encendemos el climatizador
-                enciende_climatizador(FRIO);
+                enciende_climatizador(FRIO,GPIO_CLIMATIZADOR_FRIO);
             }
             // Creamos una tarea con freeRTOS para el control del ventilador por PWM
             // Mas adelante cuando identifiquemos que la temperatura vuelve a la normalidad, eliminamos la tarea
@@ -122,7 +128,7 @@ void vTaskControlTemperatura(void *pvParameters)
                 // Seteamos el flag en true
                 estado_climatizador = true;
                 // Encendemos el climatizador
-                enciende_climatizador(CALOR);
+                enciende_climatizador(CALOR,GPIO_CLIMATIZADOR_CALOR);
             }
             // Creamos una tarea con freeRTOS para el control del ventilador por PWM
             // Mas adelante cuando identifiquemos que la temperatura vuelve a la normalidad, eliminamos la tarea
@@ -147,7 +153,7 @@ void vTaskControlTemperatura(void *pvParameters)
                 // Seteamos el flag en false
                 estado_climatizador = false;
                 // Apagamos el climatizador
-                apagar_climatizador();
+                apagar_climatizador(GPIO_CLIMATIZADOR_CALOR, GPIO_CLIMATIZADOR_FRIO);
             }
             if (estado_ventilador)
             {
@@ -158,7 +164,7 @@ void vTaskControlTemperatura(void *pvParameters)
                 apaga_ventilador();
             }
         }
-        vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO));
+        vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO_TEMPERATURA));
     }
 }
 
@@ -169,13 +175,13 @@ void vTaskControlHumedad(void *pvParameters)
     // Enviamos al script de Blynk el puntero a la estructura de parametros de humedad
     apunta_parametros_humedad(parametros_humedad);
     // Inicializamos los pines del ADC
-    adc_pins_init();
+    adc_pins_init(GPIO_HUMEDAD, GPIO_BOMBA);
     // Definimos un booleano de estado para la bomba de agua
     bool estado_bomba = false;
     while (1)
     {
         // Medimos la humedad
-        mide_humedad(parametros_humedad);
+        mide_humedad(parametros_humedad,GPIO_HUMEDAD);
         // Lo enviamos a Blynk
         char humedadC[10];
         sprintf(humedadC, "%d", parametros_humedad->humedad);
@@ -186,10 +192,10 @@ void vTaskControlHumedad(void *pvParameters)
         if (parametros_humedad->humedad < 50)
         {
             // Revisamos el nivel de agua en el tanque, si es mayor al 60% debemos accionar la bomba de agua, si no mostramos un mensaje
-            mide_nivel_tanque(parametros_humedad);
+            mide_nivel_tanque(parametros_humedad,GPIO_HUMEDAD);
             printf("Nivel de agua en el tanque: %d\n", parametros_humedad->nivel_tanque);
             if (parametros_humedad->nivel_tanque > 60)
-            {   
+            {
                 // Enviamos mensaje de estado a Blynk
                 if (xSemaphoreTake(GlobalKey, portMAX_DELAY) == pdTRUE)
                 {
@@ -201,7 +207,7 @@ void vTaskControlHumedad(void *pvParameters)
                 if (!estado_bomba)
                 {
                     estado_bomba = true;
-                    enciende_bomba();
+                    enciende_bomba(GPIO_BOMBA);
                 }
             }
             else
@@ -229,10 +235,10 @@ void vTaskControlHumedad(void *pvParameters)
             if (estado_bomba)
             {
                 estado_bomba = false;
-                apaga_bomba();
+                apaga_bomba(GPIO_BOMBA);
             }
         }
-        vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO));
+        vTaskDelay(pdMS_TO_TICKS(PERIODO_MUESTREO_HUMEDAD));
     }
 }
 

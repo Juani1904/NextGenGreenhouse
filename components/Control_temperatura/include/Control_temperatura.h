@@ -25,7 +25,7 @@ typedef struct{
  * @brief Funcion para comprobar la conexion con el sensor DS18B20
  *
  */
-void comprueba_sensor_temperatura(void);
+void comprueba_sensor_temperatura(gpio_num_t pin_sensor);
 
 /**
  * @brief Funcion para inicializar el sensor DS18B20
@@ -43,13 +43,13 @@ void mide_temperatura(param_cont_temperatura *parametros);
  * @brief Funcion para encender el bloque climatizador
  * @param calor Indica si ingesa calor o frio. Si es true, ingresa calor, si es false, egresa calor (refrigeracion)
  */
-void enciende_climatizador(bool calor);
+void enciende_climatizador(bool calor,gpio_num_t pin_climatizador);
 
 /**
  * @brief Funcion para apagar el bloque climatizador
  * 
  */
-void apagar_climatizador(void);
+void apagar_climatizador(gpio_num_t pin_climatizador_calor, gpio_num_t pin_climatizador_frio);
 
 /**
  * @brief Funcion para controlar el ventilador por PWM

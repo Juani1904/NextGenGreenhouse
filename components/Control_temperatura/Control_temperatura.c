@@ -2,28 +2,31 @@
 #include "Control_temperatura.h"
 
 //----------------------------------------------------SENSOR TEMPERATURA----------------------------------------------------*
-#define MAX_DEVICES (1) //Definimos maximo de dispositivos one wire de la linea. Como solo tenemos uno, ponemos 1
-//Definimos la resolucion de la medicion del sensor. 12 bits es la mejor resolucion
-#define DS18B20_RESOLUTION (DS18B20_RESOLUTION_12_BIT)
-//Definimos el tiempo de muestreo del sensor DS18B20
-#define PERIODO_MUESTREO (1000)
-#define GPIO_DS18B20_0 (GPIO_NUM_13) //Pin de conexion de One Wire del sensor DS18B20
+
+//Definimos maximo de dispositivos one wire de la linea. Como solo tenemos uno, ponemos 1
+#define MAX_DEVICES (1)
+
 //-----------------------------------------------------VENTILADOR-----------------------------------------------------------*
+
 #define GPIO_VENTILADOR (GPIO_NUM_25) //Pin de conexion del ventilador
-//-----------------------------------------------------CLIMATIZADOR---------------------------------------------------------*
-#define GPIO_CLIMATIZADOR_CALOR (GPIO_NUM_26) //Pin de conexion del climatizador
-#define GPIO_CLIMATIZADOR_FRIO (GPIO_NUM_27) //Pin de conexion del climatizador
-static const char *T_CONTROL = "Control temperatura"; //Tag para los logs
-//Creamos el bus de OneWire, utilizando el driver RMT
+
+
+
+
+//Tag para los logs
+static const char *T_CONTROL = "Control temperatura";
+
+//Declaramos el bus de OneWire, utilizando el driver RMT
 OneWireBus *oneWireBus;
 owb_rmt_driver_info rtmDriverInfo;
 
+//Declaramos el dispositivo DS18B20
 DS18B20_Info *dispositivo;
 
-void comprueba_sensor_temperatura(void){
+void comprueba_sensor_temperatura(gpio_num_t pin_sensor){
     
     //Inicializamos el bus de OneWire
-    oneWireBus = owb_rmt_initialize(&rtmDriverInfo, GPIO_DS18B20_0, RMT_CHANNEL_1, RMT_CHANNEL_0);
+    oneWireBus = owb_rmt_initialize(&rtmDriverInfo, pin_sensor, RMT_CHANNEL_1, RMT_CHANNEL_0);
     /*------------------------COMPROBACIÓN DE CONEXIÓN Y CODIGO-----------------------------------*/
     //Habilitamos la comprobacion CRC para el codigo ROM
     owb_use_crc(oneWireBus, true);
@@ -50,8 +53,8 @@ void inicia_sensor_temperatura(void){
     ds18b20_init_solo(dispositivo, oneWireBus);
     //Habilitamos la comprobacion CRC para todas las lecturas
     ds18b20_use_crc(dispositivo, true);
-    //Seteamos la resolucion de la medicion del sensor
-    ds18b20_set_resolution(dispositivo, DS18B20_RESOLUTION);
+    //Seteamos la resolucion de la medicion del sensor en 12 bits
+    ds18b20_set_resolution(dispositivo, DS18B20_RESOLUTION_12_BIT);
 }
 
 void mide_temperatura(param_cont_temperatura *parametros){
@@ -69,23 +72,20 @@ void mide_temperatura(param_cont_temperatura *parametros){
     }
 }
 
-void enciende_climatizador(bool calor){
-    
+void enciende_climatizador(bool calor,gpio_num_t pin_climatizador){
+    gpio_set_direction(pin_climatizador, GPIO_MODE_OUTPUT);
+    gpio_set_level(pin_climatizador, 1);
     if(calor){
-        gpio_set_direction(GPIO_CLIMATIZADOR_CALOR, GPIO_MODE_OUTPUT);
         ESP_LOGI(T_CONTROL,"Encendiendo climatizador en modo calor\n");
-        gpio_set_level(GPIO_CLIMATIZADOR_CALOR, 1);
     }else{
-        gpio_set_direction(GPIO_CLIMATIZADOR_FRIO, GPIO_MODE_OUTPUT);
         ESP_LOGI(T_CONTROL,"Encendiendo climatizador en modo refrigeración\n");
-        gpio_set_level(GPIO_CLIMATIZADOR_FRIO, 1);
     }
 }
 
-void apagar_climatizador(void){
+void apagar_climatizador(gpio_num_t pin_climatizador_calor, gpio_num_t pin_climatizador_frio){
     ESP_LOGI(T_CONTROL,"Apagando climatizador\n");
-    gpio_set_level(GPIO_CLIMATIZADOR_CALOR, 0);
-    gpio_set_level(GPIO_CLIMATIZADOR_FRIO, 0);
+    gpio_set_level(pin_climatizador_calor, 0);
+    gpio_set_level(pin_climatizador_frio, 0);
 }
 
 TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
@@ -96,7 +96,7 @@ TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
     //Configuramos el timer
     ledc_timer_config_t timer_conf;
     timer_conf.duty_resolution = LEDC_TIMER_10_BIT; //Resolucion de 10 bits
-    timer_conf.freq_hz = 5000; //Frecuencia de 20kHz
+    timer_conf.freq_hz = 5000; //Frecuencia de 5kHz
     timer_conf.speed_mode = LEDC_LOW_SPEED_MODE; //Modo de baja velocidad
     timer_conf.timer_num = LEDC_TIMER_0; //Timer 0
     ledc_timer_config(&timer_conf);
@@ -135,7 +135,7 @@ TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
     
 }
 
-void apaga_ventilador(void) {
+void apaga_ventilador(void){
     ESP_LOGI(T_CONTROL,"Apagando ventilador\n");
     ledc_stop(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, 0);
     gpio_set_level(GPIO_VENTILADOR, 0);

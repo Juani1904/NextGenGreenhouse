@@ -1,7 +1,5 @@
 /*Script para conexión a internet y envio/recepción de datos a Blynk Iot por protocolo MQTT */
 
-/*Incluimos las librerias necesarias para el funcionamiento de nuestro script*/
-
 #include <stdio.h> //Sirve para la entrada y salida de datos
 #include <stdint.h> //Sirve para definir tipos de datos
 #include <stddef.h> //Sirve para definir tipos de datos
@@ -33,28 +31,53 @@
 #include "Control_temperatura.h" //Libreria para configurar el control de temperatura
 #include "Control_humedad.h" //Libreria para configurar el control de humedad
 
-//Definimos los tags para los logs
-static const char *MQTT_TAG = "Cliente MQTT";
-static const char *WIFI_TAG = "Estacion WIFI";
-
-//Definicion de parametros WIFI
-
-#define ESP_MAXIMUM_RETRY                   10
-#define ESP_WIFI_SAE_MODE                   WPA3_SAE_PWE_BOTH
-#define EXAMPLE_H2E_IDENTIFIER              ""
-#define ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD   WIFI_AUTH_WPA2_PSK
-
-//Documentamos todo con buenas practicas
-//Definimos el tag para los logs
-
-
-//Documentamos la funcion conecta_servidor
 
 /**
  * @brief Funcion para conectar al servidor MQTT
  * @details Funcion que se encarga de conectar al servidor MQTT, y se suscribe a los topics necesarios
  */
 void conecta_servidor(void);
+
+/**
+ * @brief Funcion para inicializar la estacion WIFI
+ */
+static void conecta_wifi(void);
+
+/**
+ * @brief Funcion para inicializar el cliente MQTT
+ */
+static void inicia_cliente_mqtt(void);
+
+/**
+ * @brief Función para apuntar a los parámetros de temperatura
+ * @details Función que apunta a la direccion de memoria del struct de parametros de temperatura para poder acceder a ellos y leerlos/modificarlos
+ * desde los métodos del script de Blynk_MQTT_Connect
+ * @param parametros estructura de parámetros de temperatura que le pasamos a la función para apuntar a dichas variables con un puntero
+ */
+void apunta_parametros_temperatura(param_cont_temperatura* parametros);
+
+/**
+ * @brief Función para apuntar a los parámetros de humedad
+ * @details Función que apunta a la direccion de memoria del struct de parametros de humedad para poder acceder a ellos y leerlos/modificarlos
+ * desde los métodos del script de Blynk_MQTT_Connect
+ * @param parametros estructura de parámetros de humedad que le pasamos a la función para apuntar a dichas variables con un puntero
+ */
+void apunta_parametros_humedad(param_cont_humedad* parametros);
+
+/**
+ * @brief Funcion para enviar datos a Blynk
+ * @details Recibe la data de Blynk, y manda el dato a los actuadores, determinando a que actuador debe enviarse
+ * @param event evento de MQTT
+ */
+void recibe_Blynk(esp_mqtt_event_handle_t event);
+
+/**
+ * @brief Funcion para recibir datos de Blynk
+ * @details Recibe la data de los sensores, y manda el dato a Blynk, determinando a que topic debe enviarse
+ * @param cmd_id identificador del comando. Determina que hacer con el dato que se envia
+ * @param data datos del sensor
+ */
+void envia_Blynk(char *cmd_id, char *data);
 
 /**
  * @brief Handler de eventos WIFI
@@ -67,11 +90,6 @@ void conecta_servidor(void);
 static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data);
 
 /**
- * @brief Funcion para inicializar la estacion WIFI
- */
-void conecta_wifi(void);
-
-/**
  * @brief Funcion para inicializar el cliente MQTT
  * 
  * @param handler_args argumentos del handler
@@ -82,42 +100,11 @@ void conecta_wifi(void);
  */
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
 
-/**
- * @brief Funcion para inicializar el cliente MQTT
- */
-static void inicia_cliente_mqtt(void);
 
 /**
- * @brief Funcion para loggear errores
- * 
- * @param message mensaje de error
- * @param error_code codigo de error
+ * @brief Funcion para loggear errores MQTT
+ * @details La función recibe un mensaje y un código de error. Si el código es distinto de cero, muestra el mensaje y el código de error
+ * @param mensaje 
+ * @param codigo_error 
  */
-static void log_error_if_nonzero(const char *message, int error_code); //Funcion para loggear errores
-
-/**
- * @brief Función para apuntar a los parámetros de temperatura
- * @param parametros estructura de parámetros de temperatura que le pasamos a la función para apuntar a dichas variables con un puntero
- */
-void apunta_parametros_temperatura(param_cont_temperatura* parametros);
-
-/**
- * @brief Función para apuntar a los parámetros de humedad
- * @param parametros estructura de parámetros de humedad que le pasamos a la función para apuntar a dichas variables con un puntero
- */
-void apunta_parametros_humedad(param_cont_humedad* parametros);
-
-/**
- * @brief Funcion para enviar datos a Blynk
- * @details Un MUX que recibe la data de Blynk, y manda el dato a los actuadores, determinando a que actuador debe enviarse
- * @param event evento de MQTT
- */
-void recibe_Blynk(esp_mqtt_event_handle_t event);
-
-/**
- * @brief Funcion para recibir datos de Blynk
- * @details Un DEMUX que recibe la data de los sensores, y manda el dato a Blynk, determinando a que topic debe enviarse
- * @param cmd_id identificador del comando. Determina que hacer con el dato que se envia
- * @param data datos del sensor
- */
-void envia_Blynk(char *cmd_id, char *data);
+static void print_error(const char *mensaje, int codigo_error); //Funcion para loggear errores

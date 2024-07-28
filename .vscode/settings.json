@@ -39,7 +39,8 @@
         "control_temperatura.h": "c",
         "blynk_mqtt_connect.h": "c",
         "ledc.h": "c",
-        "adc.h": "c"
+        "adc.h": "c",
+        "system_error": "c"
     },
     "idf.flashType": "UART",
     "idf.portWin": "COM3"
