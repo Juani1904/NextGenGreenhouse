@@ -5,11 +5,11 @@
 static const char *H_CONTROL = "Control humedad"; //Tag para los logs
 
 
-void adc_pins_init(gpio_num_t pin_sensor, gpio_num_t pin_bomba){
+void adc_pins_init(gpio_num_t pin_sensor, gpio_num_t pin_nivel){
     //Configuramos los channel ADC 6 y 7 (GPIO 34 y 35 respectivamente) para tomar las medidas de humedad
     adc1_config_width(ADC_WIDTH_BIT_10); //Seteamos una resolución de 10 bit, para mediciones de 0 a 1023 valores
     adc1_config_channel_atten(pin_sensor, ADC_ATTEN_DB_11); //Usamos una atenuación de 11 dB, para obtener mediciones de 150 ~ 2450 mV
-    adc1_config_channel_atten(pin_bomba, ADC_ATTEN_DB_11);
+    adc1_config_channel_atten(pin_nivel, ADC_ATTEN_DB_11);
 }
 
 

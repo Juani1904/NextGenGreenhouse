@@ -256,7 +256,6 @@ esp_err_t crea_tareas(void)
     TaskHandle_t xHumedadHandle;
     xTaskCreate(&vTaskControlHumedad, "control_humedad", STACK_SIZE, &parametrosHumedadTask, 4, &xHumedadHandle);
 
-    // Mas tareas....
 
     return ESP_OK;
 }

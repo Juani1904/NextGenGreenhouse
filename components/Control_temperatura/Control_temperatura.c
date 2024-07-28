@@ -11,8 +11,6 @@
 #define GPIO_VENTILADOR (GPIO_NUM_25) //Pin de conexion del ventilador
 
 
-
-
 //Tag para los logs
 static const char *T_CONTROL = "Control temperatura";
 
@@ -113,7 +111,6 @@ TaskFunction_t controla_ventilador(param_cont_temperatura *parametros){
     ledc_channel_config(&ledc_conf);
     //Definimos la variable duty cycle y configuramos el pin
     uint32_t dutyC = 0;
-    //gpio_set_direction(GPIO_VENTILADOR, GPIO_MODE_OUTPUT);
     //Configuramos el bucle de actualizacion del duty cycle
     while(1){
         //Calculamos el duty cycle como un proporcional de la diferencia de temperatura

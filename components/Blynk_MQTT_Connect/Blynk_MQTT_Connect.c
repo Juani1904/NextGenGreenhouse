@@ -282,7 +282,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t e
         ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;           // Recuperamos la informacion del evento (en este caso la ip asignada) en la variable event
         ESP_LOGI(WIFI_TAG, "IP asignada " IPSTR, IP2STR(&event->ip_info.ip)); // Printeamos la ip asignada
         intentos_conexion = 0;                                                // Reseteamos el numero de intentos de conexion
-        xEventGroupSetBits(WIFI_EVENT_GROUP, WIFI_CONNECTED_BIT);             // Seteamos el bit de conexion exitosa en 1
+        xEventGroupSetBits(WIFI_EVENT_GROUP, WIFI_CONNECTED_BIT);             // Seleccionamos el bit de conexion exitosa del event group
     }
 }
 

@@ -23,9 +23,9 @@ typedef struct{
  * @brief Función para inicializar los canales del ADC
  *
  * @param pin_sensor Pin del sensor de humedad
- * @param pin_bomba Pin de la bomba de agua
+ * @param pin_nivel Pin del sensor de nivel
  */
-void adc_pins_init(gpio_num_t pin_sensor, gpio_num_t pin_bomba);
+void adc_pins_init(gpio_num_t pin_sensor, gpio_num_t pin_nivel);
 
 
 
