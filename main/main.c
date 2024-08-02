@@ -220,6 +220,12 @@ void vTaskControlHumedad(void *pvParameters)
                     xSemaphoreGive(GlobalKey);
                 }
                 ESP_LOGW(MAIN_TAG, "Nivel de agua en el tanque bajo");
+                //Si la bomba estaba prendida, la apagamos
+                if (estado_bomba)
+                {
+                    estado_bomba = false;
+                    apaga_bomba(GPIO_BOMBA);
+                }
             }
         }
         else
